@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 //Handles all Jump logic for Character
 public class Jump : Character
 {
