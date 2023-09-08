@@ -132,21 +132,6 @@ public class Jump : Character
                 downJumpPressed = false;
             }
         }
-        /*Checks to see if the player is currently not in a grounded state while downJumpPressed
-        if (!character.isGrounded && Input.GetAxis("Vertical") < 0 && jumpPressed)
-        {
-            //Performs a downward jump to allow the player to fall faster
-            downwardJumping = true;
-            //Handles the logic to propel the player down
-            DownwardJump();
-            //Makes sure the player is currently passing through a platform
-            if (!passingThroughPlatform)
-            {
-                //Checks to see if there is a one way platform beneath the player so the player can automatically pass through it instead of colliding with it
-                CheckForPlatformBelow();
-            }
-        }
-        */
     }
 
     private void CheckForJump()
@@ -228,20 +213,6 @@ public class Jump : Character
         }
     }
 
-    //Jump that pushes player downwards for quicker falling
-    /*
-    private void DownwardJump()
-    {
-        if (downwardJumping)
-        {
-            //Pushes player down instead of up for a downward jump
-            rb.velocity = new Vector2(rb.velocity.x, downwardJumpingFallSpeed);
-        }
-    }
-    */
-
-    //Manages fall speeds and if the character is in the falling state
-    
     private void Falling()
     {
         if (!downwardJumping)
