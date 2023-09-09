@@ -67,6 +67,11 @@ public class TheSong : MonoBehaviour
                 SongTime -= Time.deltaTime;
                 SongObject.SetActive(true);
                 SongObject.transform.localScale = new Vector3(SongRadius,SongRadius,SongRadius);
+                SongPower1.transform.localScale = new Vector3(SongRadius,SongRadius,SongRadius);
+                SongPower2.transform.localScale = new Vector3(SongRadius,SongRadius,SongRadius);
+                SongPower3.transform.localScale = new Vector3(SongRadius,SongRadius,SongRadius);
+                SongPower4.transform.localScale = new Vector3(SongRadius,SongRadius,SongRadius);
+                
             }
             else
             {
