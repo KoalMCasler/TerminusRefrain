@@ -6,6 +6,10 @@ TagManager:
   tags:
   - DoorTeleport
   - Song
+  - Power1
+  - Power2
+  - Power3
+  - Power4
   layers:
   - Default
   - TransparentFX
