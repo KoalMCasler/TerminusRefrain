@@ -22,7 +22,7 @@ public class TheSong : MonoBehaviour
 
     void Start()
     {
-        SongRadius = 1f;
+        SongRadius = 2f;
         SongPowerLevel = 1;
         SongIsPlaying = false;
         Initializtion();
@@ -120,5 +120,24 @@ public class TheSong : MonoBehaviour
             SongPower4.SetActive(false);
         }
 
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Power1") 
+        {
+            other.gameObject.SetActive(false);
+        }
+        if(other.tag == "Power2") 
+        {
+            other.gameObject.SetActive(false);
+        }
+        if(other.tag == "Power3") 
+        {
+            other.gameObject.SetActive(false);
+        }
+        if(other.tag == "Power4") 
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }
