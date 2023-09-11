@@ -11,7 +11,7 @@ public class PlayerTeleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if (Input.GetKeyDown("e"))
+     if (Input.GetButtonDown("Interact"))
         {
             StartCoroutine(Teleport());
         }
