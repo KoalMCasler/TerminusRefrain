@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// Character script taken and modified from tutorials by IAmErr00r on youtube, https://www.youtube.com/@IAmErr00r
 
 //This script will manage different character states and scripts that inherit from the Character script can change the value as needed
 public class Character : MonoBehaviour

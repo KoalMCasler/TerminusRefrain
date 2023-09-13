@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// Character script taken and modified from tutorials by IAmErr00r on youtube, https://www.youtube.com/@IAmErr00r
 
 //Testing script meant to damage the player and apply damage amount; this script is something you can use as a foundation for something that would actually apply damage; as long as it has a 2D Collider that would be able to 
 public class DamageField : MonoBehaviour

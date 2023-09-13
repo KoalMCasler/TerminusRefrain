@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// Character script taken and modified from tutorials by IAmErr00r on youtube, https://www.youtube.com/@IAmErr00r
 
 //Attach this script to the Character to allow the Character to react to platforms that contain the Ledge script so the Character can hang and/or climb when appropriate
 public class LedgeLocator : Character

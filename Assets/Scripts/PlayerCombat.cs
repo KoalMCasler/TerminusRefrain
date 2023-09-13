@@ -15,6 +15,7 @@ public class PlayerCombat : MonoBehaviour
     // Input check
     private void Update()
     {
+        // Input
         if (Input.GetButtonDown("MeleeAttack"))
         {
             MeleeAttack();
@@ -36,6 +37,8 @@ public class PlayerCombat : MonoBehaviour
             HitEnemy.GetComponent<Enemy>().TakeDamage(BaseDamage);
         }
     }
+
+    // Debug tool to see the damage zone when in the editor. 
     private void OnDrawGizmosSelected()
     {
         if (AttackPoint == null)

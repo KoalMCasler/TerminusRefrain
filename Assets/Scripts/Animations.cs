@@ -9,16 +9,19 @@ public class Animations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Gets the Animator component. 
         anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Conditionals to control the bools that trigger specific animations.  
         if (anim.GetBool("LedgeClimbing") == true)
         {
             anim.SetBool("LedgeHanging", false);
         }
+        // Separates jump from fall animation.
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             yVelocity += 1f;

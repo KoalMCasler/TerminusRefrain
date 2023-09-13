@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// Character script taken and modified from tutorials by IAmErr00r on youtube, https://www.youtube.com/@IAmErr00r
 
 //Attach this script to any platform the Character should hang off of if it collides with this platform
 public class Ledge : MonoBehaviour

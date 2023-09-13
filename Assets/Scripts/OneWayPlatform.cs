@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// Character script taken and modified from tutorials by IAmErr00r on youtube, https://www.youtube.com/@IAmErr00r
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class OneWayPlatform : MonoBehaviour

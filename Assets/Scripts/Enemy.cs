@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // Enemy base HP stat.
     public int MaxHP = 10;
+    // Current HP
     private int CurrentHP; 
     // Start is called before the first frame update
+    // Sets Current Hp to Max HP on load. 
     void Start()
     {
         CurrentHP = MaxHP;
     }
 
+    // Function to calculate damage. 
     public void TakeDamage(int Damage)
     {
         CurrentHP -= Damage;
@@ -24,6 +28,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // Causes death state. 
     void Die()
     {
         Debug.Log("You Warded off your Shadow!");

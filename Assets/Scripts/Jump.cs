@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Character script taken and modified from tutorials by IAmErr00r on youtube, https://www.youtube.com/@IAmErr00r
 
 //Handles all Jump logic for Character
 public class Jump : Character
@@ -181,7 +181,7 @@ public class Jump : Character
             rb.velocity = new Vector2(rb.velocity.x, maxJumpSpeed);
         }
         //Handles fall logic
-        //Falling();
+        Falling();
     }
 
     //Additional jump force based on holding down the jump button
@@ -273,23 +273,6 @@ public class Jump : Character
             character.isGrounded = false;
         }
     }
-
-    /*
-    private void CheckForPlatformBelow() 
-    {
-        //Performs a raycast to see if a platform layer is beneath the player
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(col.bounds.center.x, col.bounds.min.y), Vector2.down, Mathf.Infinity, collisionLayer);
-        //Checks to see if the colliding platform beneath the player is a one way platform and allows the player to pass through it based on the one way platform type
-        if (hit.collider.GetComponent<OneWayPlatform>()
-            && (hit.collider.GetComponent<OneWayPlatform>().type != OneWayPlatform.OneWayPlatforms.GoingUp))
-        {
-            //Sets the private gameobject passedThroughPlatform to the current raycast hit platform
-            nextPlatform = hit.collider;
-            //Ignores the current platform that the player should pass through because the player is downward jumping from above the platform
-            Physics2D.IgnoreCollision(col, nextPlatform, true);
-        }
-    }
-    */
     private void TurnOnCollision()
     {
         if (nextPlatform != null && col.bounds.max.y < nextPlatform.bounds.min.y)

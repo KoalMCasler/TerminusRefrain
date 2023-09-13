@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    // Script to make camera follow player
     public GameObject Player;
 
     private Vector3 offSet;

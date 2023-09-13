@@ -22,14 +22,11 @@ public class TheSong : MonoBehaviour
 
     void Start()
     {
-        SongRadius = 2f;
-        SongPowerLevel = 1;
-        SongIsPlaying = false;
         Initializtion();
         SetSongTime();
         StartPowers();
     }
-
+    // Sets the power bools for character power level.
     void StartPowers()
     {
         SongPower1.SetActive(false);
@@ -42,7 +39,7 @@ public class TheSong : MonoBehaviour
     {
         SongTime = 90f;
     }
-
+    //Sets all variables and objects to the correct starting setting
     protected virtual void Initializtion()
     {
         SongCollider = SongObject.GetComponent<Collider2D>();
@@ -50,16 +47,21 @@ public class TheSong : MonoBehaviour
         PowerCollider2 = SongPower2.GetComponent<Collider2D>();
         PowerCollider3 = SongPower3.GetComponent<Collider2D>();
         PowerCollider4 = SongPower4.GetComponent<Collider2D>();
+        SongRadius = 2f;
+        SongPowerLevel = 1;
+        SongIsPlaying = false;
     }
 
     public 
     // Update is called once per frame
     void Update()
     {
+        // Makes sure the song is only playing when told to.
         if(SongIsPlaying == false)
         {
             SongObject.SetActive(false);
         }
+        // Sets song object active and starts song count down to limit song plat time. 
         if(SongIsPlaying == true)
         {
             if(SongTime > 0)
@@ -79,6 +81,7 @@ public class TheSong : MonoBehaviour
                 SetSongTime();
             }
         }
+        // Song input
         if(Input.GetButtonDown("PlaySong") && SongTime > 0)
         {
             SongIsPlaying = true;
@@ -87,6 +90,7 @@ public class TheSong : MonoBehaviour
         {
             SongIsPlaying = false;
         }
+        // Sets song powers to active if song is playing and specific power bools true
         if(SongPowerLevel == 2 && SongIsPlaying == true)
         {
             SongPower1.SetActive(true);
@@ -121,7 +125,8 @@ public class TheSong : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    // Triggers effect based on active power
+        private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Power1") 
         {
