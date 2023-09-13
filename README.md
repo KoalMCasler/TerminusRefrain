@@ -4,7 +4,7 @@ A *Shrouded Fortress Games* Production.
 
 A 2D Lovecraftian Step Platformer
 
-The plan is to make this into a metroidvania style game centered around sound/music, specifically a song the play will use to help them explore the mysterious crumbing city drawn together by the even more mysterious shards of the pillar.
+The plan is to make this into a metroidvania style game centered around sound/music, specifically a song the player will use to help them explore the mysterious crumbing city drawn together by the even more mysterious shards of the pillar.
 
 # The game so far
 
