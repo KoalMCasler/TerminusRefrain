@@ -14,6 +14,8 @@ public class TheSong : MonoBehaviour
     public int SongPowerLevel;
     public float SongTime;
     public bool SongIsPlaying;
+    public float SongBaseTime;
+    public bool ResetReady;
     protected Collider2D SongCollider;
     protected Collider2D PowerCollider1;
     protected Collider2D PowerCollider2;
@@ -37,7 +39,7 @@ public class TheSong : MonoBehaviour
 
     void SetSongTime()
     {
-        SongTime = 90f;
+        SongTime = SongBaseTime * SongPowerLevel;
     }
     //Sets all variables and objects to the correct starting setting
     protected virtual void Initializtion()
@@ -78,7 +80,6 @@ public class TheSong : MonoBehaviour
             else
             {
                 SongIsPlaying = false;
-                SetSongTime();
             }
         }
         // Song input
@@ -89,6 +90,10 @@ public class TheSong : MonoBehaviour
         if(Input.GetButton("StopSong"))
         {
             SongIsPlaying = false;
+        }
+        if(Input.GetButtonDown("Interact") && ResetReady == true)
+        {
+            SetSongTime();
         }
         // Sets song powers to active if song is playing and specific power bools true
         if(SongPowerLevel == 2 && SongIsPlaying == true)
@@ -123,26 +128,41 @@ public class TheSong : MonoBehaviour
         {
             SongPower4.SetActive(false);
         }
+        if(Input.GetButtonDown("Interact") && ResetReady == true)
+        {
+            SetSongTime();
+        }
 
     }
     // Triggers effect based on active power
         private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Power1") 
+        if(other.tag == "Power1" && SongPowerLevel >= 2) 
         {
             other.gameObject.SetActive(false);
         }
-        if(other.tag == "Power2") 
+        if(other.tag == "Power2" && SongPowerLevel >= 3) 
         {
             other.gameObject.SetActive(false);
         }
-        if(other.tag == "Power3") 
+        if(other.tag == "Power3" && SongPowerLevel >= 4) 
         {
             other.gameObject.SetActive(false);
         }
-        if(other.tag == "Power4") 
+        if(other.tag == "Power4" && SongPowerLevel >= 5) 
         {
             other.gameObject.SetActive(false);
+        }
+        if(other.tag == "RecordPlayer")
+        {
+            ResetReady = true;
         }
     }
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if(other.tag == "RecordPlayer")
+            {
+                ResetReady = false;
+            }
+        }
 }

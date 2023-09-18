@@ -10,6 +10,7 @@ TagManager:
   - Power2
   - Power3
   - Power4
+  - RecordPlayer
   layers:
   - Default
   - TransparentFX
