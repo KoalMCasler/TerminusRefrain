@@ -49,7 +49,7 @@ public class TheSong : MonoBehaviour
         PowerCollider2 = SongPower2.GetComponent<Collider2D>();
         PowerCollider3 = SongPower3.GetComponent<Collider2D>();
         PowerCollider4 = SongPower4.GetComponent<Collider2D>();
-        SongRadius = 2f;
+        SongRadius = 4f;
         SongPowerLevel = 1;
         SongIsPlaying = false;
     }

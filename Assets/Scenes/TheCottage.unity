@@ -3665,7 +3665,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &740962199
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5686,7 +5686,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &1179578514
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8242,7 +8242,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &1784960891
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8802,7 +8802,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &1898046243
 SpriteRenderer:
   m_ObjectHideFlags: 0
