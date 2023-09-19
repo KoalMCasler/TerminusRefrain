@@ -2566,6 +2566,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &474456503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3768027163040638093, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+  m_PrefabInstance: {fileID: 1563512769763358301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &482545200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,7 +4072,7 @@ GameObject:
   - component: {fileID: 909323838}
   m_Layer: 0
   m_Name: Ledge
-  m_TagString: Untagged
+  m_TagString: Ledge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9767,6 +9772,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
   m_PrefabInstance: {fileID: 1563512769763358301}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &347022577284374044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474456503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7faf509fa01c44c8a43bf7d0f42cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingLeft: 0
+  isGrounded: 0
+  isJumping: 0
+  grabbingLedge: 0
+  takingDamage: 0
+  isDead: 0
+  clip: {fileID: 0}
+  climbingHorizontalOffset: 0.5
 --- !u!1001 &1563512769763358301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9859,10 +9884,14 @@ PrefabInstance:
       propertyPath: maxFallSpeed
       value: -10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3768027163040638198, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3768027163040638093, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 347022577284374044}
   m_SourcePrefab: {fileID: 100100000, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
 --- !u!1001 &2035649575302133617
 PrefabInstance:
