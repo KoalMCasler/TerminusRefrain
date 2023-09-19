@@ -11,7 +11,6 @@ TagManager:
   - Power3
   - Power4
   - RecordPlayer
-  - Ledge
   layers:
   - Default
   - TransparentFX
