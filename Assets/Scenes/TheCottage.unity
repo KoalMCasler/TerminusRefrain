@@ -6765,7 +6765,7 @@ GameObject:
   - component: {fileID: 1482855110}
   - component: {fileID: 1482855109}
   m_Layer: 0
-  m_Name: MainManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6795,8 +6795,7 @@ Transform:
   m_LocalPosition: {x: -8.107981, y: 2.111458, z: 0.09324418}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 347022577284374031}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1495617114
@@ -10036,7 +10035,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482855110}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 620313669, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: transition
@@ -10064,15 +10063,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.51201916
+      value: -8.62
       objectReference: {fileID: 0}
     - target: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.73145807
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.08574189
+      value: 0.0075022876
       objectReference: {fileID: 0}
     - target: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10579,4 +10578,5 @@ SceneRoots:
   - {fileID: 7815242223991593810}
   - {fileID: 1602081022}
   - {fileID: 848642927}
+  - {fileID: 1563512769763358301}
   - {fileID: 1482855110}
