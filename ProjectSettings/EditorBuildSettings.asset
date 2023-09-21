@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TheCottage.unity
+    path: Assets/Scenes/TheCabin.unity
     guid: cbb9470dc7ee88142a9d73cfcb994189
   - enabled: 1
     path: Assets/Scenes/TheCrossroads.unity

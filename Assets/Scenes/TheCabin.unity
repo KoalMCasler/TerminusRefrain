@@ -10061,6 +10061,10 @@ PrefabInstance:
       propertyPath: SongBaseTime
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 2804825306891460217, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: SongPowerLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.62
