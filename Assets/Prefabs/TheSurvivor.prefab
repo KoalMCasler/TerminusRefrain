@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 620313669}
   - component: {fileID: 8601103990869999054}
   - component: {fileID: 2804825306891460217}
+  - component: {fileID: 7801124076430492055}
   m_Layer: 0
   m_Name: TheSurvivor
   m_TagString: Player
@@ -379,7 +380,7 @@ MonoBehaviour:
   holdForce: 20
   distanceToCollider: 0.08
   maxJumpSpeed: 1
-  maxFallSpeed: -20
+  maxFallSpeed: -15
   fallSpeed: 3
   gravityMultipler: 3
   collisionLayer:
@@ -495,6 +496,24 @@ MonoBehaviour:
   SongPowerLevel: 0
   SongTime: 0
   SongIsPlaying: 0
+  SongBaseTime: 30
+  ResetReady: 0
+--- !u!114 &7801124076430492055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768027163040638093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5fbf9070b67d642ae9a0ffdce0e3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Entrance: {fileID: 0}
+  Exit: {fileID: 0}
+  Offset: {x: 1, y: 0, z: 0}
+  sceneInfo: {fileID: 11400000, guid: 364208fb1b122ed4fab002bda4a47a74, type: 2}
 --- !u!1 &3807988034367917192
 GameObject:
   m_ObjectHideFlags: 0
