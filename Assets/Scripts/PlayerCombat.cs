@@ -36,6 +36,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("You hit " + HitEnemy.name);
             HitEnemy.GetComponent<Enemy>().TakeDamage(BaseDamage);
         }
+        animator.SetBool("Attacking", false);
     }
 
     // Debug tool to see the damage zone when in the editor. 
