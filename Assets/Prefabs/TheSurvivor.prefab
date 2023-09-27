@@ -512,7 +512,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Entrance: {fileID: 0}
   Exit: {fileID: 0}
-  Offset: {x: 1, y: 0, z: 0}
+  EnterOffset: {x: -1, y: 0, z: 0}
+  ExitOffset: {x: 1, y: 0, z: 0}
   sceneInfo: {fileID: 11400000, guid: 364208fb1b122ed4fab002bda4a47a74, type: 2}
 --- !u!1 &3807988034367917192
 GameObject:
