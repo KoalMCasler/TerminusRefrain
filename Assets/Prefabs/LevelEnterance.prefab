@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 472025735643269438}
   - component: {fileID: 5441582524920240805}
   - component: {fileID: 2662341210275770720}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LevelEnterance
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}

@@ -13,11 +13,15 @@ public class LevelMove : MonoBehaviour
     [SerializeField]
     public SceneInfo sceneInfo;
 
-    private void OnTriggerEnter2D(Collider2D Player) 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
+        if(other.tag == "Player")
+        {
+            Debug.Log("You Moved Levels");
             sceneInfo.IsNextScene = IsNextScene;
             animator.SetBool("Leave", true);
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
             animator.SetBool("Leave", false);
+        }    
     }
 }
