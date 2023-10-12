@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TheSong : MonoBehaviour
 {
@@ -21,9 +22,12 @@ public class TheSong : MonoBehaviour
     protected Collider2D PowerCollider2;
     protected Collider2D PowerCollider3;
     protected Collider2D PowerCollider4;
+    public TextMeshProUGUI SongTimeText;
+    public string SongHUDText;
 
     void Start()
     {
+        SongTimeHUD();
         Initializtion();
         SetSongTime();
         StartPowers();
@@ -58,6 +62,7 @@ public class TheSong : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SongTimeHUD();
         // Makes sure the song is only playing when told to.
         if(SongIsPlaying == false)
         {
@@ -164,5 +169,10 @@ public class TheSong : MonoBehaviour
             {
                 ResetReady = false;
             }
+        }
+        private void SongTimeHUD()
+        {
+            SongHUDText = string.Format("Song Time: {0:0.0} Seconds.", SongTime);
+            SongTimeText.text = SongHUDText;
         }
 }
