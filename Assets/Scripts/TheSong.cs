@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class TheSong : MonoBehaviour
 {
@@ -172,7 +173,8 @@ public class TheSong : MonoBehaviour
         }
         private void SongTimeHUD()
         {
-            SongHUDText = string.Format("Song Time: {0:0.0} Seconds.", SongTime);
+            TimeSpan SongTimeSpan = TimeSpan.FromSeconds(SongTime);
+            SongHUDText = string.Format("Song Time: {0:D2}:{1:D2}", SongTimeSpan.Minutes, SongTimeSpan.Seconds);
             SongTimeText.text = SongHUDText;
         }
 }
