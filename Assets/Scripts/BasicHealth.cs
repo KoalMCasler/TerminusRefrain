@@ -28,16 +28,17 @@ public class BasicHealth : MonoBehaviour
     {
         HealthString = string.Format("Health: {0}%", Health);
         HealthText.text = HealthString;
+        if(Health <= 0)
+            {
+                Death();
+            }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy")
         {
             Health -= 20;
-            if(Health <= 0)
-            {
-                Death();
-            }
+            
         }
     }
     void Death()
@@ -45,6 +46,7 @@ public class BasicHealth : MonoBehaviour
         Health = 0;
         PlayerRB.bodyType = RigidbodyType2D.Static;
         DeathText.SetActive(true);
+        Invoke("Reload", 6); 
     }
     void Reload()
     {
