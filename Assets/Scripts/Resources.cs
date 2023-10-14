@@ -11,6 +11,8 @@ public class Resources : MonoBehaviour
     private string ScrapString;
     public TextMeshProUGUI FoodHUDObject;
     public TextMeshProUGUI ScrapHUDObject;
+    public GameObject Player;
+    protected Collider2D PlayerCollider;
 
 
     // Start is called before the first frame update
@@ -18,6 +20,7 @@ public class Resources : MonoBehaviour
     {
         FoodResource = 0;
         Scrap = 0;
+        PlayerCollider = Player.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -27,5 +30,18 @@ public class Resources : MonoBehaviour
         ScrapString = string.Format("Scrap: {0}", Scrap);
         FoodHUDObject.text = FoodString;
         ScrapHUDObject.text = ScrapString;
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Food")
+        {
+            FoodResource += 1;
+            other.gameObject.SetActive(false);
+        }
+        if(other.tag == "Scrap")
+        {
+            Scrap += 1;
+            other.gameObject.SetActive(false);
+        }
     }
 }

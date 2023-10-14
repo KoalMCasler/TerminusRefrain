@@ -11,6 +11,9 @@ TagManager:
   - Power3
   - Power4
   - RecordPlayer
+  - Food
+  - Scrap
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - UI
   - ShadowEnemy
   - Confiner
-  - 
+  - Collectables
   - 
   - 
   - 
