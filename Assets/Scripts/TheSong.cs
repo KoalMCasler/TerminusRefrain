@@ -25,6 +25,7 @@ public class TheSong : MonoBehaviour
     protected Collider2D PowerCollider4;
     public TextMeshProUGUI SongTimeText;
     public string SongHUDText;
+    public LayerMask SongLayer;
 
     void Start()
     {
@@ -143,25 +144,28 @@ public class TheSong : MonoBehaviour
     // Triggers effect based on active power
         private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Power1" && SongPowerLevel >= 2) 
+        if(other.gameObject.layer == LayerMask.NameToLayer("Song"))
         {
-            other.gameObject.SetActive(false);
-        }
-        if(other.tag == "Power2" && SongPowerLevel >= 3) 
-        {
-            other.gameObject.SetActive(false);
-        }
-        if(other.tag == "Power3" && SongPowerLevel >= 4) 
-        {
-            other.gameObject.SetActive(false);
-        }
-        if(other.tag == "Power4" && SongPowerLevel >= 5) 
-        {
-            other.gameObject.SetActive(false);
-        }
-        if(other.tag == "RecordPlayer")
-        {
-            ResetReady = true;
+            if(other.tag == "Power1" && SongPowerLevel >= 2) 
+            {
+                other.gameObject.SetActive(false);
+            }
+            if(other.tag == "Power2" && SongPowerLevel >= 3) 
+            {
+                other.gameObject.SetActive(false);
+            }
+            if(other.tag == "Power3" && SongPowerLevel >= 4) 
+            {
+                other.gameObject.SetActive(false);
+            }
+            if(other.tag == "Power4" && SongPowerLevel >= 5) 
+            {
+                other.gameObject.SetActive(false);
+            }
+            if(other.tag == "RecordPlayer")
+            {
+                ResetReady = true;
+            }
         }
     }
         private void OnTriggerExit2D(Collider2D other)
