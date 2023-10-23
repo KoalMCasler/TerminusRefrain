@@ -99,4 +99,17 @@ public class Character : MonoBehaviour
         currentPlatform = null;
         return false;
     }
+    public void EndGame()
+    {
+        //Debug line to test quit function in editor
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EndGame();
+        }
+    }
 }
