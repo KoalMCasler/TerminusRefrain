@@ -537,6 +537,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8261203599031084570, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1994993542}
     - target: {fileID: 8261203599031084573, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
       propertyPath: m_Name
       value: CrossFade
@@ -1504,6 +1508,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a510e921fcb584e4c8a40ffc6b8ecf96, type: 3}
+--- !u!20 &1994993542 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7540589657373169434, guid: a510e921fcb584e4c8a40ffc6b8ecf96, type: 3}
+  m_PrefabInstance: {fileID: 1994993541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4801967257015804305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}

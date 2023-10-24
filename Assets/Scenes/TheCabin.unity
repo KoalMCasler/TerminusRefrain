@@ -9846,6 +9846,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 345457369}
     m_Modifications:
     - target: {fileID: 8261203599031084570, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1118179597}
+    - target: {fileID: 8261203599031084570, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261203599031084570, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261203599031084570, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
@@ -9859,10 +9871,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8261203599031084574, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261203599031084574, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8261203599031084574, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
@@ -9936,10 +9944,6 @@ PrefabInstance:
     - target: {fileID: 8261203599031084574, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261203599730222201, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
-      propertyPath: m_Alpha
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261203599730222201, guid: c74b9d904a59bcc45b3fcfaeed902ed7, type: 3}
       propertyPath: m_Interactable
