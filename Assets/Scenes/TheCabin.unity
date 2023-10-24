@@ -4197,7 +4197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cbc991aa537a84a8781f6164ca5f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hangingHorizontalOffset: 0
+  hangingHorizontalOffset: 0.5
   hangingVerticalOffset: 0.5
 --- !u!1 &922101910
 GameObject:
