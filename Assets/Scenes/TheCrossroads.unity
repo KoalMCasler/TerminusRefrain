@@ -487,6 +487,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scrap (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8083700997874474224, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.52
@@ -1433,7 +1437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1004400483}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collectables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,6 +1625,10 @@ PrefabInstance:
     - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_Name
       value: Scrap (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8083700997874474224, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1850,6 +1858,10 @@ PrefabInstance:
     - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_Name
       value: Scrap (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8083700997874474224, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2107,6 +2119,10 @@ PrefabInstance:
     - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_Name
       value: Scrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8083700997874474224, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2637,6 +2653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scrap (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8083700997874474224, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.08
@@ -2760,6 +2780,10 @@ PrefabInstance:
     - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_Name
       value: Scrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171307113931901136, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8083700997874474224, guid: 3e69eebbaefa6fe4894a51ac3e010f11, type: 3}
       propertyPath: m_LocalPosition.x
