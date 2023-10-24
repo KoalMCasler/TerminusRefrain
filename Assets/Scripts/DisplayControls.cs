@@ -7,7 +7,7 @@ public class DisplayControls : MonoBehaviour
     public GameObject ControlText;
     void Start()
     {
-        Invoke("CloseControls", 5);
+        Invoke("CloseControls", 8);
     }
     void CloseControls()
     {
