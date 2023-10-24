@@ -11,6 +11,7 @@ public class PlayerCombat : MonoBehaviour
 
     public float AttackRange = 0.05f;
     public int BaseDamage = 1;
+    public float WaitTime = 0.5f;
   
     // Input check
     private void Update()
@@ -18,13 +19,13 @@ public class PlayerCombat : MonoBehaviour
         // Input
         if (Input.GetButtonDown("MeleeAttack"))
         {
-            MeleeAttack();
+            StartCoroutine(MeleeAttack());
         }
 
     }
 
     // Melee attack logic
-    private void MeleeAttack()
+    private IEnumerator MeleeAttack()
     {
         //Starts Attack Animation
         animator.SetBool("Attacking", true);
@@ -36,6 +37,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("You hit " + HitEnemy.name);
             HitEnemy.GetComponent<Enemy>().TakeDamage(BaseDamage);
         }
+        yield return new WaitForSeconds(WaitTime);
         animator.SetBool("Attacking", false);
     }
 

@@ -31,5 +31,6 @@ public class Animations : MonoBehaviour
             yVelocity = 0;
         }
         anim.SetFloat("yVelocity", yVelocity);
+        
     }
 }
