@@ -10,16 +10,15 @@ public class BasicHealth : MonoBehaviour
     private string HealthString;
     public TextMeshProUGUI HealthText;
     public Collider2D PlayerCollider;
-    private GameObject Player;
-    private Rigidbody2D PlayerRB;
+    public GameObject Player;
+    public Rigidbody2D PlayerRB;
     public int sceneBuildIndex;
     public GameObject DeathText;
-    public Vector2 KnockBack;
+    public int KnockBack;
     // Start is called before the first frame update
     void Start()
     {
         Player = FindObjectOfType<Character>().gameObject;
-        KnockBack = new Vector2(2,0);
         DeathText.SetActive(false);
         Health = 100;
         PlayerRB = Player.GetComponent<Rigidbody2D>();
@@ -39,18 +38,18 @@ public class BasicHealth : MonoBehaviour
             Health = 100;
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.tag == "Enemy")
+        if(other.gameObject.tag == "Enemy")
         {
             Health -= 20;
             if(Player.GetComponent<Character>().isFacingLeft == true)
             {
-                PlayerRB.velocity = -KnockBack;
+                PlayerRB.AddForce(transform.right * KnockBack);
             }
             else
             {
-                PlayerRB.velocity = KnockBack;
+                PlayerRB.AddForce(-transform.right * KnockBack);
             }
         }
     }
