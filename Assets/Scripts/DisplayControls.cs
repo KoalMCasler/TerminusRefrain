@@ -5,9 +5,10 @@ using UnityEngine;
 public class DisplayControls : MonoBehaviour
 {
     public GameObject ControlText;
+    public int DisplayDelay;
     void Start()
     {
-        Invoke("CloseControls", 8);
+        Invoke("CloseControls", DisplayDelay);
     }
     void CloseControls()
     {

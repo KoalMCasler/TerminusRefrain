@@ -12,18 +12,12 @@ public class Resources : MonoBehaviour
     private string ScrapString;
     public TextMeshProUGUI FoodHUDObject;
     public TextMeshProUGUI ScrapHUDObject;
-    public GameObject Player;
-    protected Collider2D PlayerCollider;
-    public LayerMask CollectionLayer;
-
-
-
+    public Collider2D PlayerCollider;
     // Start is called before the first frame update
     void Start()
     {
         FoodResource = 0;
         Scrap = 0;
-        PlayerCollider = Player.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -34,20 +28,17 @@ public class Resources : MonoBehaviour
         FoodHUDObject.text = FoodString;
         ScrapHUDObject.text = ScrapString;
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Collectables"))
-        {
-            if(other.tag == "Food")
+            if(other.gameObject.CompareTag("Food"))
             {
                 FoodResource += 1;
                 other.gameObject.SetActive(false);
             }
-            if(other.tag == "Scrap")
+            if(other.gameObject.CompareTag("Scrap"))
             {
                 Scrap += 1;
                 other.gameObject.SetActive(false);
             }
-        }
     }
 }
