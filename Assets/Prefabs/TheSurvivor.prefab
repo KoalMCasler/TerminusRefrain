@@ -958,8 +958,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   AttackRange: 0.15
-  BaseDamage: 1
+  LightDamage: 1
   WaitTime: 0.25
+  HeavyDamage: 2
+  WeaponIsHeavy: 0
 --- !u!114 &2804825306891460217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1016,8 +1018,8 @@ MonoBehaviour:
   Health: 0
   HealthText: {fileID: 7964049325379311188}
   PlayerCollider: {fileID: 9196191181946309041}
-  Player: {fileID: 0}
-  PlayerRB: {fileID: 0}
+  Player: {fileID: 3768027163040638093}
+  PlayerRB: {fileID: 3768027163040638091}
   sceneBuildIndex: 0
   DeathText: {fileID: 1249261930201603724}
   KnockBack: 0
@@ -1037,10 +1039,7 @@ MonoBehaviour:
   Scrap: 0
   FoodHUDObject: {fileID: 5604083768152803507}
   ScrapHUDObject: {fileID: 4364510539906246306}
-  Player: {fileID: 3768027163040638093}
-  CollectionLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  PlayerCollider: {fileID: 0}
 --- !u!1 &5302276484446582781
 GameObject:
   m_ObjectHideFlags: 0
