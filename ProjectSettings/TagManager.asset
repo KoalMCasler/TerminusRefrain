@@ -16,6 +16,7 @@ TagManager:
   - Enemy
   - Exit
   - Enter
+  - HUD
   layers:
   - Default
   - TransparentFX

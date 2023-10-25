@@ -8,6 +8,11 @@ public class UIControler : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject GameUI;
     public GameObject PauseMenuUI;
+
+    void Awake()
+    {
+        GameUI = GameObject.FindWithTag("HUD");
+    }
     public void EndGame()
     {
         Debug.Log("You pressed quit");
