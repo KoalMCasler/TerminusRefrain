@@ -916,6 +916,10 @@ PrefabInstance:
       propertyPath: IsNextScene
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2662341210275770720, guid: 0a1fa00822ae05642ae41fbae2dfc13e, type: 3}
+      propertyPath: sceneBuildIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8546858779475106575, guid: 0a1fa00822ae05642ae41fbae2dfc13e, type: 3}
       propertyPath: m_Name
       value: LevelEnterance
