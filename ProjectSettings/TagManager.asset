@@ -14,6 +14,8 @@ TagManager:
   - Food
   - Scrap
   - Enemy
+  - Exit
+  - Enter
   layers:
   - Default
   - TransparentFX

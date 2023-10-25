@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class OnLevelEnter : MonoBehaviour
 {
-    public GameObject Entrance;
-    public GameObject Exit;
+    private GameObject Entrance;
+    private GameObject Exit;
     public Vector3 EnterOffset = new Vector3(-1, 0, 0);
     public Vector3 ExitOffset = new Vector3(1, 0, 0);
     [SerializeField]
@@ -16,6 +16,8 @@ public class OnLevelEnter : MonoBehaviour
     void Awake()
     {
         Player = gameObject.GetComponent<Rigidbody2D>();
+        Entrance = GameObject.FindWithTag("Enter");
+        Exit = GameObject.FindWithTag("Exit");
     }
 
     void Start()

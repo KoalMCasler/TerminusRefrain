@@ -998,8 +998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5fbf9070b67d642ae9a0ffdce0e3bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Entrance: {fileID: 0}
-  Exit: {fileID: 0}
   EnterOffset: {x: -1, y: 0, z: 0}
   ExitOffset: {x: 1, y: 0, z: 0}
   sceneInfo: {fileID: 11400000, guid: 364208fb1b122ed4fab002bda4a47a74, type: 2}
@@ -1039,7 +1037,7 @@ MonoBehaviour:
   Scrap: 0
   FoodHUDObject: {fileID: 5604083768152803507}
   ScrapHUDObject: {fileID: 4364510539906246306}
-  PlayerCollider: {fileID: 0}
+  PlayerCollider: {fileID: 9196191181946309041}
 --- !u!1 &5302276484446582781
 GameObject:
   m_ObjectHideFlags: 0
