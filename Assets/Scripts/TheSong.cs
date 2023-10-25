@@ -22,7 +22,7 @@ public class TheSong : MonoBehaviour
     void Start()
     {
         SongTimeHUD();
-        Initializtion();
+        Initialization();
         SetSongTime();
     }
     // Sets the power bools for character power level.
@@ -33,7 +33,7 @@ public class TheSong : MonoBehaviour
         SongTime = SongBaseTime * SongPowerLevel;
     }
     //Sets all variables and objects to the correct starting setting
-    protected virtual void Initializtion()
+    protected virtual void Initialization()
     {
         SongCollider = SongObject.GetComponent<Collider2D>();
         SongRadius = 4f;
@@ -87,9 +87,12 @@ public class TheSong : MonoBehaviour
             {
                 ResetReady = true;
             }
-            if(other.tag == "Power1")
+            if(SongIsPlaying == true)
             {
-                other.gameObject.SetActive(false);
+                if(other.tag == "Power1" && SongPowerLevel >= 2)
+                {
+                    other.gameObject.SetActive(false);
+                }
             }
         }
         private void OnTriggerExit2D(Collider2D other)

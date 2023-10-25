@@ -20,6 +20,10 @@ public class OnLevelEnter : MonoBehaviour
 
     void Start()
     {
+        if(Entrance == null)
+            {return;}
+        if(Exit == null)
+            {return;}
         GameObject target = sceneInfo.IsNextScene ? Entrance : Exit;
         Vector3 Offset = sceneInfo.IsNextScene ? EnterOffset : ExitOffset;
 
