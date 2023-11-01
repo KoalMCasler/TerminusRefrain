@@ -23,7 +23,7 @@ public class OneWayPlatform : MonoBehaviour
     {
         //Grabs a reference of the current platform collider, player and player collider.
         col = GetComponent<Collider2D>();
-        player = FindObjectOfType<Character>().gameObject;
+        player = FindObjectOfType<MainCharacter>().gameObject;
         playerCollider = player.GetComponent<Collider2D>();
     }
 
