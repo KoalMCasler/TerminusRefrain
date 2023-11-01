@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
 {
-    public int health;
-    public int scrap;
-    public int food;
     [HideInInspector]
     public bool isFacingRight;
     public bool isGrounded;

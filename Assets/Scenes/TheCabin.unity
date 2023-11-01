@@ -2766,6 +2766,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &627223567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8011699407002537038, guid: 0753532f4484ef449a8694d6bfd9b632, type: 3}
+  m_PrefabInstance: {fileID: 1294291083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &670809332
 GameObject:
   m_ObjectHideFlags: 0
@@ -10085,6 +10090,8 @@ GameObject:
   - component: {fileID: 7801124076251741446}
   - component: {fileID: 7801124076251741448}
   - component: {fileID: 7801124076251741447}
+  - component: {fileID: 7801124076251741449}
+  - component: {fileID: 7801124076251741450}
   m_Layer: 0
   m_Name: TheSurvivor
   m_TagString: Player
@@ -10896,6 +10903,51 @@ MonoBehaviour:
   passingThroughPlatform: 0
   downJumpPressed: 0
   downwardJumping: 0
+--- !u!114 &7801124076251741449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768027163238275103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7faf509fa01c44c8a43bf7d0f42cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  scrap: 0
+  food: 0
+  isFacingRight: 0
+  isGrounded: 0
+  isJumping: 0
+  grabbingLedge: 0
+  takingDamage: 0
+  isDead: 0
+  playerRB: {fileID: 0}
+  playerCollider: {fileID: 0}
+  playerAnim: {fileID: 0}
+  currentPlatform: {fileID: 0}
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  mainCharacter: {fileID: 0}
+  clip: {fileID: 0}
+  climbingHorizontalOffset: 0.5
+--- !u!114 &7801124076251741450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768027163238275103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97144e4dd4f3b024980362f20be18d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameUI: {fileID: 5249814950029724677}
+  PauseMenuUI: {fileID: 627223567}
 --- !u!1001 &7815242223991593810
 PrefabInstance:
   m_ObjectHideFlags: 0

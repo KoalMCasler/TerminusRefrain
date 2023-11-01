@@ -18,7 +18,7 @@ public class BasicHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = FindObjectOfType<Character>().gameObject;
+        Player = FindObjectOfType<MainCharacter>().gameObject;
         DeathText.SetActive(false);
         Health = 100;
         PlayerRB = Player.GetComponent<Rigidbody2D>();

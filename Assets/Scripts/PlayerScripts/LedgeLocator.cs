@@ -4,7 +4,7 @@ using UnityEngine;
 // Character script taken and modified from tutorials by IAmErr00r on youtube, https://www.youtube.com/@IAmErr00r
 
 //Attach this script to the Character to allow the Character to react to platforms that contain the Ledge script so the Character can hang and/or climb when appropriate
-public class LedgeLocator : Character
+public class LedgeLocator : MainCharacter
 {
     //The animation that plays when the Character climbs a ledge to it can Lerp the player position based on how long the animation time is
     [SerializeField]
@@ -26,14 +26,14 @@ public class LedgeLocator : Character
     //Bool that makes sure the LedgeClimbing animation doesn't play too much
     private bool climbing;
     //Reference of the Jump script on the Player
-    private Jump jump;
+    private MovementControl movementControl;
 
     //Start method that is run in the Character script; if there is no Character script in your project, then uncomment the code above and use that Start() method
-    protected override void Initializtion()
+    void Start()
     {
         //This will grab all the references setup already in the Character script
-        base.Initializtion();
-        jump = GetComponent<Jump>();
+        Initialization();
+        movementControl = GetComponent<MovementControl>();
         //Checks to see if there is an AnimationClip plugged into the clip variable
         if (clip != null)
         {
@@ -55,13 +55,13 @@ public class LedgeLocator : Character
     protected virtual void CheckForLedge()
     {
         //Determines that the Character is currently not falling after hanging from a ledge; this doesn't mean the Character isn't falling, but hasn't just pressed the input to allow the Character to fall off a platform when it was just previously hanging from it
-        if (!falling && !jump.downwardJumping)
+        if (!falling && !movementControl.downwardJumping)
         {
             //This is a universal way to see if the Character sprite is facing right
             if (transform.localScale.x > 0)
             {
                 //Sets the top of the Character collider and just barely in front of it so the RaycastHit2D can perform a better check
-                topOfPlayer = new Vector2(col.bounds.max.x + .1f, col.bounds.max.y);
+                topOfPlayer = new Vector2(playerCollider.bounds.max.x + .1f, playerCollider.bounds.max.y);
                 //This will check to see if the topOfPlayer value is colliding with anything
                 RaycastHit2D hit = Physics2D.Raycast(topOfPlayer, Vector2.right, .2f);
                 //Checks to see if the topOfPlayer value is colliding with a platform that contains the Ledge script
@@ -72,12 +72,12 @@ public class LedgeLocator : Character
                     //Sets a temprorary Collider2D variable to help clean up code and optimize
                     Collider2D ledgeCollider = ledge.GetComponent<Collider2D>();
                     //Checks to see top of the Character collider is below the top of the ledgeCollider and also that if the platform happens to be a one way platform that the Character isn't in the middle of the platform so it snaps to the ledge more accurately or allows the Charcter to pass through if the platform is a one way platform
-                    if (col.bounds.max.y < ledgeCollider.bounds.max.y && col.bounds.max.y > ledgeCollider.bounds.center.y && col.bounds.min.x < ledgeCollider.bounds.min.x)
+                    if (playerCollider.bounds.max.y < ledgeCollider.bounds.max.y && playerCollider.bounds.max.y > ledgeCollider.bounds.center.y && playerCollider.bounds.min.x < ledgeCollider.bounds.min.x)
                     {
                         //Sets the GrabbingLedge bool to true
-                        character.grabbingLedge = true;
+                        mainCharacter.grabbingLedge = true;
                         //Runs the correct LedgeHanging animation
-                        anim.SetBool("LedgeHanging", true);
+                        playerAnim.SetBool("LedgeHanging", true);
                     }
                 }
             }
@@ -85,7 +85,7 @@ public class LedgeLocator : Character
             else
             {
                 //Sets the top of the Character collider and just barely in front of it so the RaycastHit2D can perform a better check
-                topOfPlayer = new Vector2(col.bounds.min.x - .1f, col.bounds.max.y);
+                topOfPlayer = new Vector2(playerCollider.bounds.min.x - .1f, playerCollider.bounds.max.y);
                 //This will check to see if the topOfPlayer value is colliding with anything
                 RaycastHit2D hit = Physics2D.Raycast(topOfPlayer, Vector2.left, .2f);
                 //Checks to see if the topOfPlayer value is colliding with a platform that contains the Ledge script
@@ -96,31 +96,31 @@ public class LedgeLocator : Character
                     //Sets a temprorary Collider2D variable to help clean up code and optimize
                     Collider2D ledgeCollider = ledge.GetComponent<Collider2D>();
                     //Checks to see top of the Character collider is below the top of the ledgeCollider and also that if the platform happens to be a one way platform that the Character isn't in the middle of the platform so it snaps to the ledge more accurately or allows the Charcter to pass through if the platform is a one way platform
-                    if (col.bounds.max.y < ledgeCollider.bounds.max.y && col.bounds.max.y > ledgeCollider.bounds.center.y && col.bounds.max.x > ledgeCollider.bounds.max.x)
+                    if (playerCollider.bounds.max.y < ledgeCollider.bounds.max.y && playerCollider.bounds.max.y > ledgeCollider.bounds.center.y && playerCollider.bounds.max.x > ledgeCollider.bounds.max.x)
                     {
                         //Sets the GrabbingLedge bool to true
-                        anim.SetBool("LedgeHanging", true);
+                        playerAnim.SetBool("LedgeHanging", true);
                         //Runs the correct LedgeHanging animation
-                        character.grabbingLedge = true;
+                        mainCharacter.grabbingLedge = true;
                     }
                 }
             }
             //Checks to see if both there is a platform set as ledge and the value of GrabbingLedge is true
-            if (ledge != null && character.grabbingLedge)
+            if (ledge != null && mainCharacter.grabbingLedge)
             {
                 //Runs a method to have the Character snap to a more exact position on the platform based on a few different variables
                 AdjustPlayerPosition();
                 //Makes sure the player stops moving in all directions
-                rb.velocity = Vector2.zero;
+                playerRB.velocity = Vector2.zero;
                 //Turns off gravity for the Character while hanging from platform
-                rb.bodyType = RigidbodyType2D.Kinematic;
+                playerRB.bodyType = RigidbodyType2D.Kinematic;
                 //I've set up my HorizontalMovement script to not run the movement logic if true, but if you're not sure how to set that up, use the line below
                 //GetComponent<HorizontalMovement>().enabled = false;
             }
             else
             {
                 //Turns on the gravity again if the Character is no longer hanging from ledge
-                rb.bodyType = RigidbodyType2D.Dynamic;
+                playerRB.bodyType = RigidbodyType2D.Dynamic;
                 //I've set up my HorizontalMovement script to not run the movement logic if true, but if you're not sure how to set that up, use the line below
                 //GetComponent<HorizontalMovement>().enabled = true;
             }
@@ -131,40 +131,40 @@ public class LedgeLocator : Character
     protected virtual void LedgeHanging()
     {
         //If Character is Grabbing ledge and the up button is pressed
-        if (character.grabbingLedge && Input.GetAxis("Vertical") > 0 && !climbing)
+        if (mainCharacter.grabbingLedge && Input.GetAxis("Vertical") > 0 && !climbing)
         {
             //Stops the coroutine to allow the player to climb the ledge from playing multiple times when climbing
             climbing = true;
             //Stops playing the LedgeHanging bool
-            anim.SetBool("LedgeHanging", false);
+            playerAnim.SetBool("LedgeHanging", false);
             //Makes sure the Character is facing right
             if (transform.localScale.x > 0)
             {
                 //Method that runs to have the Character Lerp to top of platform based on the animationTime variable
-                StartCoroutine(ClimbingLedge(new Vector2(transform.position.x + climbingHorizontalOffset, ledge.GetComponent<Collider2D>().bounds.max.y + col.bounds.extents.y), animationTime));
+                StartCoroutine(ClimbingLedge(new Vector2(transform.position.x + climbingHorizontalOffset, ledge.GetComponent<Collider2D>().bounds.max.y + playerCollider.bounds.extents.y), animationTime));
             }
             //Makes sure the Character is facing left
             else
             {
                 //Method that runs to have the Character Lerp to top of platform based on the animationTime variable
-                StartCoroutine(ClimbingLedge(new Vector2(transform.position.x - climbingHorizontalOffset, ledge.GetComponent<Collider2D>().bounds.max.y + col.bounds.extents.y), animationTime));
+                StartCoroutine(ClimbingLedge(new Vector2(transform.position.x - climbingHorizontalOffset, ledge.GetComponent<Collider2D>().bounds.max.y + playerCollider.bounds.extents.y), animationTime));
             }
         }
         //If Character is Grabbing ledge and the down button is pressed
-        if (character.grabbingLedge && Input.GetAxis("Vertical") < 0)
+        if (mainCharacter.grabbingLedge && Input.GetAxis("Vertical") < 0)
         {
             //Sets the ledge value to null so there is no ledge stored
             ledge = null;
             //Sets the moved bool back to false so when the Character grabs another ledge, the Character can snap to the correct position based on the AdjustPlayerPosition() method
             moved = false;
             //Sets the Character state of GrabbingLedge to false so all the logic that needs to run if not GrabbingLedge can run
-            character.grabbingLedge = false;
+            mainCharacter.grabbingLedge = false;
             //Stops playing the LedgeHanging animation
-            anim.SetBool("LedgeHanging", false);
+            playerAnim.SetBool("LedgeHanging", false);
             //Sets teh falling bool to true very temporarily so the Character doesn't grab the same platform while falling from it
             falling = true;
             //Turns gravity back on for the Character
-            rb.bodyType = RigidbodyType2D.Dynamic;
+            playerRB.bodyType = RigidbodyType2D.Dynamic;
             //I've set up my HorizontalMovement script to not run the movement logic if true, but if you're not sure how to set that up, use the line below
             //GetComponent<HorizontalMovement>().enabled = true;
             //Runs the NotFalling method half a second later to make sure the falling bool gets set back to false quickly
@@ -183,7 +183,7 @@ public class LedgeLocator : Character
         while (time <= duration)
         {
             //Plays the LedgeClimbing animation
-            anim.SetBool("LedgeClimbing", true);
+            playerAnim.SetBool("LedgeClimbing", true);
             //Handles the Character position based on where it started while hanging from platform to the top of the platform based on how long the LedgeClimbing animation is
             transform.position = Vector2.Lerp(startValue, topOfPlatform, time / duration);
             //Incriments the time value based on how long it has been since the Character started climbing the platform
@@ -198,9 +198,9 @@ public class LedgeLocator : Character
         //Allows this coroutine to play again and prevent bad transitions
         climbing = false;
         //Gets the Character out of the GrabbingLedge state
-        character.grabbingLedge = false;
+        mainCharacter.grabbingLedge = false;
         //Stops playing the LedgeClimbing animation
-        anim.SetBool("LedgeClimbing", false);
+        playerAnim.SetBool("LedgeClimbing", false);
     }
 
     //Method that snaps Character to the best on the platform based on a hangingHorizontalOffest and hangingVerticalOffset values found on the Ledge script of the platform
@@ -219,13 +219,13 @@ public class LedgeLocator : Character
             if (transform.localScale.x > 0)
             {
                 //Snaps the Character position to the offset values found on the Ledge script as well as the platform Collider values for more exact placement when hanging from ledge
-                transform.position = new Vector2((ledgeCollider.bounds.min.x - col.bounds.extents.x) + platform.hangingHorizontalOffset, (ledgeCollider.bounds.max.y - col.bounds.extents.y - .5f) + platform.hangingVerticalOffset);
+                transform.position = new Vector2((ledgeCollider.bounds.min.x - playerCollider.bounds.extents.x) + platform.hangingHorizontalOffset, (ledgeCollider.bounds.max.y - playerCollider.bounds.extents.y - .5f) + platform.hangingVerticalOffset);
             }
             //If the Character is facing left
             else
             {
                 //Snaps the Character position to the offset values found on the Ledge script as well as the platform Collider values for more exact placement when hanging from ledge
-                transform.position = new Vector2((ledgeCollider.bounds.max.x + col.bounds.extents.x) - platform.hangingHorizontalOffset, (ledgeCollider.bounds.max.y - col.bounds.extents.y - .5f) + platform.hangingVerticalOffset);
+                transform.position = new Vector2((ledgeCollider.bounds.max.x + playerCollider.bounds.extents.x) - platform.hangingHorizontalOffset, (ledgeCollider.bounds.max.y - playerCollider.bounds.extents.y - .5f) + platform.hangingVerticalOffset);
             }
         }
     }
