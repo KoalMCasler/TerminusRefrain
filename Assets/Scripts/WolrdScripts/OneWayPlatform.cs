@@ -39,7 +39,7 @@ public class OneWayPlatform : MonoBehaviour
                 //Sets the player as a gameobject that should ignore the platform collider so the player can pass through
                 Physics2D.IgnoreCollision(playerCollider, col, true);
                 //Sets the jump passingThroughPlatform bool to true so it doesn't enter the grounded state while passing through it; you may not need this line of code for your solution
-                player.GetComponent<Jump>().passingThroughPlatform = true;
+                player.GetComponent<MovementControl>().passingThroughPlatform = true;
                 //Runs coroutine to allow the player to collide with the platform again
                 StartCoroutine(StopIgnoring());
             }
@@ -53,12 +53,12 @@ public class OneWayPlatform : MonoBehaviour
         if (collision.gameObject == player) 
         {
             //Checks to see if the Input allows for a downward jump and that the player is actually on top of the one way platform
-            if (player.GetComponent<Jump>().downJumpPressed && playerCollider.bounds.min.y > col.bounds.center.y && type != OneWayPlatforms.GoingUp)
+            if (player.GetComponent<MovementControl>().downJumpPressed && playerCollider.bounds.min.y > col.bounds.center.y && type != OneWayPlatforms.GoingUp)
             {
                 //Sets the player as a gameobject that should ignore the platform collider so the player can pass through
                 Physics2D.IgnoreCollision(playerCollider, col, true);
                 //Sets the jump passingThroughPlatform bool to true so it doesn't enter the grounded state while passing through it
-                player.GetComponent<Jump>().passingThroughPlatform = true;
+                player.GetComponent<MovementControl>().passingThroughPlatform = true;
                 //Runs coroutine to allow the player to collide with the platform again
                 StartCoroutine(StopIgnoring());
             }
@@ -73,6 +73,6 @@ public class OneWayPlatform : MonoBehaviour
         //Sets the player as a gameobject that should collide the platform collider so the player can stand on it again
         Physics2D.IgnoreCollision(playerCollider, col, false);
         //Sets the jump passingThroughPlatform bool to false so the player can enter the grounded state
-        player.GetComponent<Jump>().passingThroughPlatform = false;
+        player.GetComponent<MovementControl>().passingThroughPlatform = false;
     }
 }

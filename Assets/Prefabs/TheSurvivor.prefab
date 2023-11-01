@@ -596,7 +596,7 @@ Transform:
   m_GameObject: {fileID: 1563512770053904849}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48, y: 0.086, z: 0}
+  m_LocalPosition: {x: -0.49999955, y: 0.10000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -748,18 +748,16 @@ GameObject:
   - component: {fileID: 3768027163040638089}
   - component: {fileID: 3768027163040638088}
   - component: {fileID: 3768027163040638091}
-  - component: {fileID: 3768027163040638197}
-  - component: {fileID: 3768027163040638196}
-  - component: {fileID: 3768027163040638199}
-  - component: {fileID: 3768027163040638198}
   - component: {fileID: 620313670}
   - component: {fileID: 620313668}
   - component: {fileID: 620313669}
-  - component: {fileID: 8601103990869999054}
   - component: {fileID: 2804825306891460217}
   - component: {fileID: 7801124076430492055}
-  - component: {fileID: 3233216972226397318}
-  - component: {fileID: 8181566433134025658}
+  - component: {fileID: 8601103990869999054}
+  - component: {fileID: 658754849142777998}
+  - component: {fileID: 7972384501272228272}
+  - component: {fileID: 3768027163040638198}
+  - component: {fileID: 5212634921979761284}
   m_Layer: 0
   m_Name: TheSurvivor
   m_TagString: Player
@@ -776,7 +774,7 @@ Transform:
   m_GameObject: {fileID: 3768027163040638093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.028000116, y: 1.343, z: 0}
+  m_LocalPosition: {x: -9, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -830,7 +828,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8b838537c54cb9a4484ce89cd3333473, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.28, y: 1.28}
@@ -901,100 +899,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3768027163040638197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3768027163040638093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09719447e1a1b854b85344c3a63e8a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFacingLeft: 0
-  isGrounded: 0
-  isJumping: 0
-  grabbingLedge: 0
-  takingDamage: 0
-  isDead: 0
---- !u!114 &3768027163040638196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3768027163040638093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c595075e540374408b655182ed1abd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFacingLeft: 0
-  isGrounded: 0
-  isJumping: 0
-  grabbingLedge: 0
-  takingDamage: 0
-  isDead: 0
-  speed: 150
-  distanceToCollider: 0.08
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 1
---- !u!114 &3768027163040638199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3768027163040638093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba46a855987179144ab5c8c1a6f94db5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFacingLeft: 0
-  isGrounded: 0
-  isJumping: 0
-  grabbingLedge: 0
-  takingDamage: 0
-  isDead: 0
-  maxJumps: 1
-  jumpForce: 20
-  maxButtonHoldTime: 0.4
-  holdForce: 20
-  distanceToCollider: 0.08
-  maxJumpSpeed: 1
-  maxFallSpeed: -15
-  fallSpeed: 3
-  gravityMultipler: 3
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  passingThroughPlatform: 0
-  downJumpPressed: 0
-  downwardJumping: 0
---- !u!114 &3768027163040638198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3768027163040638093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c7faf509fa01c44c8a43bf7d0f42cef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFacingLeft: 0
-  isGrounded: 0
-  isJumping: 0
-  grabbingLedge: 0
-  takingDamage: 0
-  isDead: 0
-  clip: {fileID: 0}
-  climbingHorizontalOffset: 0.3
 --- !u!95 &620313670
 Animator:
   serializedVersion: 5
@@ -1042,28 +946,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 0}
   TransitionTime: 0.5
---- !u!114 &8601103990869999054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3768027163040638093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a627bf95ecba54bbc1f4793f6387cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 620313670}
-  AttackPoint: {fileID: 1563512770053904848}
-  EnemyLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  AttackRange: 0.15
-  LightDamage: 1
-  WaitTime: 0.25
-  HeavyDamage: 2
-  WeaponIsHeavy: 0
 --- !u!114 &2804825306891460217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,7 +985,7 @@ MonoBehaviour:
   EnterOffset: {x: -1, y: 0, z: 0}
   ExitOffset: {x: 1, y: 0, z: 0}
   sceneInfo: {fileID: 11400000, guid: 364208fb1b122ed4fab002bda4a47a74, type: 2}
---- !u!114 &3233216972226397318
+--- !u!114 &8601103990869999054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1112,18 +994,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3768027163040638093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca2a50df4b9dcb24485f86b33a5212ce, type: 3}
+  m_Script: {fileID: 11500000, guid: a5a627bf95ecba54bbc1f4793f6387cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
-  HealthText: {fileID: 7964049325379311188}
-  PlayerCollider: {fileID: 9196191181946309041}
-  Player: {fileID: 3768027163040638093}
-  PlayerRB: {fileID: 3768027163040638091}
-  sceneBuildIndex: 0
-  DeathText: {fileID: 1249261930201603724}
-  KnockBack: 0
---- !u!114 &8181566433134025658
+  animator: {fileID: 620313670}
+  AttackPoint: {fileID: 1563512770053904848}
+  EnemyLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  AttackRange: 0.05
+  LightDamage: 1
+  WaitTime: 0.5
+  HeavyDamage: 2
+  WeaponIsHeavy: 0
+--- !u!114 &658754849142777998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1132,14 +1016,126 @@ MonoBehaviour:
   m_GameObject: {fileID: 3768027163040638093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc822ecca78a4e4786f4d0a02bc5739, type: 3}
+  m_Script: {fileID: 11500000, guid: 3309b473a0f0123468c5db408f22e3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FoodResource: 0
-  Scrap: 0
+  isFacingRight: 0
+  isGrounded: 0
+  isJumping: 0
+  grabbingLedge: 0
+  takingDamage: 0
+  isDead: 0
+  playerRB: {fileID: 0}
+  playerCollider: {fileID: 0}
+  playerAnim: {fileID: 0}
+  currentPlatform: {fileID: 0}
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  mainCharacter: {fileID: 0}
+  moveSpeed: 100
+  maxJumps: 1
+  jumpForce: 15
+  maxButtonHoldTime: 0.4
+  holdForce: 1
+  maxJumpSpeed: 6
+  maxFallSpeed: -15
+  fallSpeed: 3
+  gravityMultipler: 3
+  passingThroughPlatform: 0
+  jumpDelay: 0.3
+  jumpTime: 0.38
+  downJumpPressed: 0
+--- !u!114 &7972384501272228272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768027163040638093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0bd96e5627cb5d45b96054aa8b427d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingRight: 0
+  isGrounded: 0
+  isJumping: 0
+  grabbingLedge: 0
+  takingDamage: 0
+  isDead: 0
+  playerRB: {fileID: 0}
+  playerCollider: {fileID: 0}
+  playerAnim: {fileID: 0}
+  currentPlatform: {fileID: 0}
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  mainCharacter: {fileID: 0}
+--- !u!114 &3768027163040638198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768027163040638093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7faf509fa01c44c8a43bf7d0f42cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingRight: 0
+  isGrounded: 0
+  isJumping: 0
+  grabbingLedge: 0
+  takingDamage: 0
+  isDead: 0
+  playerRB: {fileID: 0}
+  playerCollider: {fileID: 0}
+  playerAnim: {fileID: 0}
+  currentPlatform: {fileID: 0}
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  mainCharacter: {fileID: 0}
+  clip: {fileID: 0}
+  climbingHorizontalOffset: 0.5
+--- !u!114 &5212634921979761284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768027163040638093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ba9734bb9203d468477787375a7633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingRight: 0
+  isGrounded: 0
+  isJumping: 0
+  grabbingLedge: 0
+  takingDamage: 0
+  isDead: 0
+  playerRB: {fileID: 0}
+  playerCollider: {fileID: 0}
+  playerAnim: {fileID: 0}
+  currentPlatform: {fileID: 0}
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  mainCharacter: {fileID: 0}
+  health: 0
+  scrap: 0
+  food: 0
   FoodHUDObject: {fileID: 5604083768152803507}
   ScrapHUDObject: {fileID: 4364510539906246306}
   PlayerCollider: {fileID: 9196191181946309041}
+  healthText: {fileID: 7964049325379311188}
+  sceneBuildIndex: 0
+  deathText: {fileID: 1249261930201603724}
+  knockBack: 0
 --- !u!1 &5249814950361624727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,7 +1456,7 @@ Transform:
   m_GameObject: {fileID: 8012226253189994846}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.464, y: 0.088, z: -0.0075022876}
+  m_LocalPosition: {x: -0.40000033, y: 0.088, z: -0.0075022876}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1509,7 +1505,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0ce6d12a6c024a04590b93b014f486ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.15, y: 2.5}

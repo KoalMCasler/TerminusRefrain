@@ -55,10 +55,10 @@ public class LedgeLocator : MainCharacter
     protected virtual void CheckForLedge()
     {
         //Determines that the Character is currently not falling after hanging from a ledge; this doesn't mean the Character isn't falling, but hasn't just pressed the input to allow the Character to fall off a platform when it was just previously hanging from it
-        if (!falling && !movementControl.downwardJumping)
+        if (!falling)
         {
             //This is a universal way to see if the Character sprite is facing right
-            if (transform.localScale.x > 0)
+            if (transform.localScale.x < 0)
             {
                 //Sets the top of the Character collider and just barely in front of it so the RaycastHit2D can perform a better check
                 topOfPlayer = new Vector2(playerCollider.bounds.max.x + .1f, playerCollider.bounds.max.y);
@@ -138,7 +138,7 @@ public class LedgeLocator : MainCharacter
             //Stops playing the LedgeHanging bool
             playerAnim.SetBool("LedgeHanging", false);
             //Makes sure the Character is facing right
-            if (transform.localScale.x > 0)
+            if (transform.localScale.x < 0)
             {
                 //Method that runs to have the Character Lerp to top of platform based on the animationTime variable
                 StartCoroutine(ClimbingLedge(new Vector2(transform.position.x + climbingHorizontalOffset, ledge.GetComponent<Collider2D>().bounds.max.y + playerCollider.bounds.extents.y), animationTime));
@@ -216,7 +216,7 @@ public class LedgeLocator : MainCharacter
             //Quick local variable of the platform Ledge component to clean up and optimize code
             Ledge platform = ledge.GetComponent<Ledge>();
             //If the Character is facing right
-            if (transform.localScale.x > 0)
+            if (transform.localScale.x < 0)
             {
                 //Snaps the Character position to the offset values found on the Ledge script as well as the platform Collider values for more exact placement when hanging from ledge
                 transform.position = new Vector2((ledgeCollider.bounds.min.x - playerCollider.bounds.extents.x) + platform.hangingHorizontalOffset, (ledgeCollider.bounds.max.y - playerCollider.bounds.extents.y - .5f) + platform.hangingVerticalOffset);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MainCharacter
 {
@@ -40,5 +40,32 @@ public class PlayerStats : MainCharacter
         {
             health = 100;
         }
+        foodString = string.Format("Food: {0}", food);
+        scrapString = string.Format("Scrap: {0}", scrap);
+        FoodHUDObject.text = foodString;
+        ScrapHUDObject.text = scrapString;
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+            if(other.gameObject.CompareTag("Food"))
+            {
+                food += 1;
+                other.gameObject.SetActive(false);
+            }
+            if(other.gameObject.CompareTag("Scrap"))
+            {
+                scrap += 1;
+                other.gameObject.SetActive(false);
+            }
+    }
+    void Death()
+    {
+        health = 0;
+        Invoke("Reload", 5); 
+        deathText.SetActive(true);
+    }
+    void Reload()
+    {
+        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
     }
 }
