@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 1868978830}
   - component: {fileID: 1868978829}
   - component: {fileID: 1868978828}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grabable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1335,6 +1335,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2756530548686200813, guid: a510e921fcb584e4c8a40ffc6b8ecf96, type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7540589655905158582, guid: a510e921fcb584e4c8a40ffc6b8ecf96, type: 3}
       propertyPath: m_LocalPosition.x
       value: -144.91039
@@ -1394,6 +1398,10 @@ PrefabInstance:
     - target: {fileID: 7540589656178866823, guid: a510e921fcb584e4c8a40ffc6b8ecf96, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540589657373169434, guid: a510e921fcb584e4c8a40ffc6b8ecf96, type: 3}
+      propertyPath: orthographic size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7540589657373169437, guid: a510e921fcb584e4c8a40ffc6b8ecf96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1605,6 +1613,6 @@ SceneRoots:
   - {fileID: 295697721}
   - {fileID: 1160004414}
   - {fileID: 5245409904249556652}
+  - {fileID: 2382030779035375219}
   - {fileID: 1994993541}
   - {fileID: 1985576473}
-  - {fileID: 2382030779035375219}
