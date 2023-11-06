@@ -670,12 +670,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 351586913204342251, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 351586913204342251, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 351586913204342251, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 351586913204342251, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.78
+      value: -23.08
       objectReference: {fileID: 0}
     - target: {fileID: 351586913204342251, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.84
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 351586913204342251, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
       propertyPath: m_LocalPosition.z
@@ -709,9 +721,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 351586913204342251, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2870882736068647975, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
       propertyPath: m_Name
       value: EdgeShadows
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932438524781530186, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932438524781530186, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932438524781530186, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932438524781530186, guid: 0008b894fc345704187c71b5acd6af07, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
