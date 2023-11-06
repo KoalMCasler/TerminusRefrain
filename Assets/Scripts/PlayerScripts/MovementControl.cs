@@ -44,6 +44,7 @@ public class MovementControl : MainCharacter
     private bool isFalling;
     public bool downJumpPressed;
     private Collider2D nextPlatform;
+    private bool inputEnabled;
 
     void Start()
     {
@@ -54,10 +55,12 @@ public class MovementControl : MainCharacter
         originalGravity = playerRB.gravityScale;
         //Sets the total number of jumps left to the max value
         numberOfJumpsLeft = maxJumps;
+        // Allows movement on load
+        inputEnabled = true;
     }
     void Update()
     {
-        if (Input.GetAxis("Horizontal") != 0 && !mainCharacter.takingDamage && !mainCharacter.grabbingLedge)
+        if (Input.GetAxis("Horizontal") != 0 && !mainCharacter.takingDamage && !mainCharacter.grabbingLedge && inputEnabled == true)
         {
             horizontalInput = Input.GetAxis("Horizontal");
         }
@@ -204,7 +207,9 @@ public class MovementControl : MainCharacter
         //Checks if character is in jump state
         if(mainCharacter.isJumping)
         {
+            inputEnabled = false;
             yield return new WaitForSeconds(jumpDelay);
+            inputEnabled = true;
             //Applies initial jump force
             playerRB.AddForce(Vector2.up * jumpForce);
             //Checks for additional air if holding down jump button
@@ -318,5 +323,9 @@ public class MovementControl : MainCharacter
             //Ignores the current platform that the player should pass through because the player is downward jumping from above the platform
             Physics2D.IgnoreCollision(playerCollider, nextPlatform, false);
         }
+    }
+    private void DisableMovement(bool MovementIsDisabled)
+    {
+
     }
 }

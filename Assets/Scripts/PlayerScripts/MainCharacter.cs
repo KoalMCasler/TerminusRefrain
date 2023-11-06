@@ -6,7 +6,9 @@ public class MainCharacter : MonoBehaviour
 {
     [HideInInspector]
     public bool isFacingRight;
+    [HideInInspector]
     public bool isGrounded;
+    [HideInInspector]
     public bool isJumping;
     [HideInInspector]
     public bool grabbingLedge;

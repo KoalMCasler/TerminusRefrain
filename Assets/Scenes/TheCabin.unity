@@ -7153,7 +7153,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &1589549315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9957,7 +9957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7540589657373169437, guid: a510e921fcb584e4c8a40ffc6b8ecf96, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.543242
+      value: 11.543252
       objectReference: {fileID: 0}
     - target: {fileID: 7540589657373169437, guid: a510e921fcb584e4c8a40ffc6b8ecf96, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10214,6 +10214,10 @@ PrefabInstance:
     - target: {fileID: 5597419201263287310, guid: 3c5d0d6a67976664782ebe69c265c6df, type: 3}
       propertyPath: m_Name
       value: CottageDoorOutside
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872419648832517483, guid: 3c5d0d6a67976664782ebe69c265c6df, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

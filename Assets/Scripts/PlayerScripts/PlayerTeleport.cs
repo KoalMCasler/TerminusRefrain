@@ -48,7 +48,7 @@ public class PlayerTeleport : MonoBehaviour
             {
                 transition.SetBool("Start", true);
                 yield return new WaitForSeconds(TransitionTime);
-                transform.position = currentDoorTeleport.GetComponent<DoorTeleport>().GetDestination().position;
+                transform.position = (currentDoorTeleport.GetComponent<DoorTeleport>().GetDestination().position);
                 transition.SetBool("Start", false);
             }
     }
