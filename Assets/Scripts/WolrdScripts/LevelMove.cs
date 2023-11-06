@@ -12,7 +12,12 @@ public class LevelMove : MonoBehaviour
     public Animator animator;
     [SerializeField]
     public SceneInfo sceneInfo;
-
+    public GameObject player;
+    void start()
+    {
+        if(player == null)
+        {player = GameObject.FindWithTag("Player");}
+    }
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.tag == "Player")
@@ -20,7 +25,9 @@ public class LevelMove : MonoBehaviour
             Debug.Log("You Moved Levels");
             sceneInfo.IsNextScene = IsNextScene;
             animator.SetBool("Leave", true);
+            player.SetActive(false);
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+            player.SetActive(true);
             animator.SetBool("Leave", false);
         }    
     }

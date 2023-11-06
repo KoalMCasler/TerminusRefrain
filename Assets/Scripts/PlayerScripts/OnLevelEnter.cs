@@ -19,8 +19,15 @@ public class OnLevelEnter : MonoBehaviour
         Entrance = GameObject.FindWithTag("Enter");
         Exit = GameObject.FindWithTag("Exit");
     }
-
+    void OnEnable()
+    {
+        MovePlayer();
+    }
     void Start()
+    {
+        MovePlayer();
+    }
+    public void MovePlayer()
     {
         if(Entrance == null)
             {return;}
