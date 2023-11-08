@@ -20,6 +20,7 @@ public class PlayerStats : MainCharacter
     public GameObject deathText;
     public int knockBack;
     public int deathTime;
+    public GameObject winText;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerStats : MainCharacter
         deathText.SetActive(false);
         health = 100;
         deathTime = 3;
+        winText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,24 +52,23 @@ public class PlayerStats : MainCharacter
         {
             Death();
         }
+        if (scrap >= 6)
+        {
+            Win();
+        }
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-            if(other.gameObject.CompareTag("Food"))
-            {
-                food += 1;
-                other.gameObject.SetActive(false);
-            }
-            if(other.gameObject.CompareTag("Scrap"))
-            {
-                scrap += 1;
-                other.gameObject.SetActive(false);
-            }
-            if(other.gameObject.CompareTag("Enemy"))
-            {
-                health -= 20;
-            }
-
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            health -= 20;
+            other.gameObject.SetActive(false);
+        }
+        if(other.gameObject.CompareTag("Scrap"))
+        {
+            scrap += 1;
+            other.gameObject.SetActive(false);
+        }
     }
     void Death()
     {
@@ -80,4 +81,11 @@ public class PlayerStats : MainCharacter
     {
         SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
     }
+    void Win()
+    {
+        Invoke("Reload", deathTime);
+        mainCharacter.inputEnabled = false;
+        winText.SetActive(true);
+    }
+
 }

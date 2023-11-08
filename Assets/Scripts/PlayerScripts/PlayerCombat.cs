@@ -31,7 +31,7 @@ public class PlayerCombat : MonoBehaviour
                 StartCoroutine(HeavyMeleeAttack());
             }
         }
-
+        DebugControl();
     }
 
     // Melee attack logic
@@ -74,6 +74,22 @@ public class PlayerCombat : MonoBehaviour
         }
         yield return new WaitForSeconds(HeavyWaitTime);
         animator.SetBool("AttackHeavy", false);
+    }
+    private void DebugControl()
+    {
+        if(Input.GetButtonDown("DebugWeaponSwap"))
+        {
+            if(WeaponIsHeavy == true)
+            {
+                WeaponIsHeavy = false;
+                Debug.Log("You swapped to the light Melee.");
+            }
+            else
+            {
+                WeaponIsHeavy = true;
+                Debug.Log("You swapped to the heavy Melee.");
+            }
+        }
     }
 }
 

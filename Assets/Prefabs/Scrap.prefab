@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8083700997874474224}
   - component: {fileID: 146918859026103157}
-  - component: {fileID: 806178337651876775}
-  m_Layer: 0
+  - component: {fileID: -2100815589529623222}
+  - component: {fileID: 4931545505569727679}
+  m_Layer: 8
   m_Name: Scrap
   m_TagString: Scrap
   m_Icon: {fileID: 0}
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &806178337651876775
+--- !u!58 &-2100815589529623222
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,6 +118,20 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000009536743, y: -0.000015258789}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4931545505569727679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171307113931901136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d1524a74899974e8731512afc86e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerStats: {fileID: 0}
