@@ -11,7 +11,8 @@ public class PlayerCombat : MonoBehaviour
 
     public float AttackRange = 0.05f;
     public int LightDamage = 1;
-    public float WaitTime = 0.5f;
+    public float LightWaitTime = 0.5f;
+    public float HeavyWaitTime = 1f;
     public int HeavyDamage = 2;
     public bool WeaponIsHeavy;
   
@@ -46,7 +47,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("You hit " + HitEnemy.name + " for " + LightDamage + " damage");
             HitEnemy.GetComponent<Enemy>().TakeDamage(LightDamage);
         }
-        yield return new WaitForSeconds(WaitTime);
+        yield return new WaitForSeconds(LightWaitTime);
         animator.SetBool("AttackLight", false);
     }
 
@@ -71,7 +72,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("You hit " + HitEnemy.name + " for " + HeavyDamage + " damage");
             HitEnemy.GetComponent<Enemy>().TakeDamage(HeavyDamage);
         }
-        yield return new WaitForSeconds(WaitTime);
+        yield return new WaitForSeconds(HeavyWaitTime);
         animator.SetBool("AttackHeavy", false);
     }
 }

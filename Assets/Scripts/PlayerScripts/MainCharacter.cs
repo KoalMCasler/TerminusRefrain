@@ -6,6 +6,7 @@ public class MainCharacter : MonoBehaviour
 {
     [HideInInspector]
     public bool isFacingRight;
+    public bool inputEnabled;
     [HideInInspector]
     public bool isGrounded;
     [HideInInspector]

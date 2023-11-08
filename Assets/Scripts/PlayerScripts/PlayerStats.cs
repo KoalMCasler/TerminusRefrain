@@ -19,12 +19,14 @@ public class PlayerStats : MainCharacter
     public int sceneBuildIndex;
     public GameObject deathText;
     public int knockBack;
+    public int deathTime;
     // Start is called before the first frame update
     void Start()
     {
         Initialization();
         deathText.SetActive(false);
         health = 100;
+        deathTime = 3;
     }
 
     // Update is called once per frame
@@ -44,6 +46,10 @@ public class PlayerStats : MainCharacter
         scrapString = string.Format("Scrap: {0}", scrap);
         FoodHUDObject.text = foodString;
         ScrapHUDObject.text = scrapString;
+        if(mainCharacter.isDead == true)
+        {
+            Death();
+        }
     }
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -57,11 +63,17 @@ public class PlayerStats : MainCharacter
                 scrap += 1;
                 other.gameObject.SetActive(false);
             }
+            if(other.gameObject.CompareTag("Enemy"))
+            {
+                health -= 20;
+            }
+
     }
     void Death()
     {
         health = 0;
-        Invoke("Reload", 5); 
+        Invoke("Reload", deathTime);
+        mainCharacter.inputEnabled = false;
         deathText.SetActive(true);
     }
     void Reload()

@@ -44,7 +44,6 @@ public class MovementControl : MainCharacter
     private bool isFalling;
     public bool downJumpPressed;
     private Collider2D nextPlatform;
-    private bool inputEnabled;
 
     void Start()
     {
@@ -56,11 +55,11 @@ public class MovementControl : MainCharacter
         //Sets the total number of jumps left to the max value
         numberOfJumpsLeft = maxJumps;
         // Allows movement on load
-        inputEnabled = true;
+        mainCharacter.inputEnabled = true;
     }
     void Update()
     {
-        if (Input.GetAxis("Horizontal") != 0 && !mainCharacter.takingDamage && !mainCharacter.grabbingLedge && inputEnabled == true)
+        if (Input.GetAxis("Horizontal") != 0 && !mainCharacter.takingDamage && !mainCharacter.grabbingLedge && mainCharacter.inputEnabled == true)
         {
             horizontalInput = Input.GetAxis("Horizontal");
         }
