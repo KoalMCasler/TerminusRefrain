@@ -390,7 +390,7 @@ Transform:
   m_GameObject: {fileID: 2461199721652102519}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.93, y: 1.27, z: 0}
+  m_LocalPosition: {x: 0.21, y: 1.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -654,7 +654,7 @@ MonoBehaviour:
   maxJumps: 1
   jumpForce: 15
   maxButtonHoldTime: 0.4
-  holdForce: 1
+  holdForce: 1.5
   maxJumpSpeed: 6
   maxFallSpeed: -15
   fallSpeed: 3
@@ -758,6 +758,7 @@ MonoBehaviour:
   knockBack: 0
   deathTime: 0
   winText: {fileID: 4225436994739705256}
+  enemyDamage: 0
 --- !u!1 &3120040729962106654
 GameObject:
   m_ObjectHideFlags: 0
