@@ -33,7 +33,7 @@ public class MovementControl : MainCharacter
     //The number of jumps the player can perform after the initial jump
     private int numberOfJumpsLeft;
     //Very brief delay so OnCollisionStay2D method can still detect input
-    private float inputDelay;
+    public float inputDelay;
     //A bool that checks to see if the player is currently passing through a one way platform
     [HideInInspector]
     public bool passingThroughPlatform;
