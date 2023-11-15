@@ -659,6 +659,7 @@ MonoBehaviour:
   maxFallSpeed: -15
   fallSpeed: 3
   gravityMultipler: 3
+  inputDelay: 0
   passingThroughPlatform: 0
   jumpDelay: 0.3
   jumpTime: 0.38

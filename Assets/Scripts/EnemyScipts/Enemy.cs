@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Animator enemyAnimator;
     // Enemy base HP stat.
     public int MaxHP = 10;
     // Current HP
@@ -12,15 +13,16 @@ public class Enemy : MonoBehaviour
     // Sets Current Hp to Max HP on load. 
     void Start()
     {
+        enemyAnimator.SetBool("IsHit", false);
         CurrentHP = MaxHP;
     }
 
     // Function to calculate damage. 
     public void TakeDamage(int Damage)
     {
-        CurrentHP -= Damage;
-
         //Play OnHit animation
+        StartCoroutine(OnHitAnimation());
+        CurrentHP -= Damage;
 
         if (CurrentHP <= 0)
         {
@@ -38,6 +40,12 @@ public class Enemy : MonoBehaviour
         this.enabled = false;
         GetComponent<Collider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
+    }
+    private IEnumerator OnHitAnimation()
+    {
+        enemyAnimator.SetBool("IsHit", true);
+        yield return new WaitForSeconds(0.5f);
+        enemyAnimator.SetBool("IsHit", false);
     }
 }
 
