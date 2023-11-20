@@ -91,5 +91,24 @@ public class PlayerCombat : MonoBehaviour
             }
         }
     }
+    public void SetMeleeHeavy()
+    {
+        if(WeaponIsHeavy != true)
+        {
+            WeaponIsHeavy = true;
+        }
+        else
+        {return;}
+    }
+    public void SetMeleeLight()
+    {
+        if(WeaponIsHeavy == true)
+        {
+            WeaponIsHeavy = false;
+        }
+        else
+        {return;}
+    }
+
 }
 

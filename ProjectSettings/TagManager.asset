@@ -17,6 +17,7 @@ TagManager:
   - Exit
   - Enter
   - HUD
+  - Wardrobe
   layers:
   - Default
   - TransparentFX
