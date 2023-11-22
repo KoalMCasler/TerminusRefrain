@@ -10,7 +10,6 @@ public class RangedCombat : MonoBehaviour
     private int lightTime;
     private int heavyTime;
     public bool WeaponIsHeavy;
-    private float buttonHoldTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +18,8 @@ public class RangedCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("RangedAttack"))
+        if(Input.GetButtonDown("RangedAttack"))
         {
-            buttonHoldTime += Time.deltaTime;
             if(WeaponIsHeavy != true)
             {
                 StartCoroutine(LightRangedAttack());
@@ -38,12 +36,12 @@ public class RangedCombat : MonoBehaviour
     }
     private IEnumerator LightRangedAttack()
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(lightTime);
         Shoot();
     }
     private IEnumerator HeavyRangedAttack()
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(heavyTime);
         Shoot();
     }
 }

@@ -1935,7 +1935,7 @@ GameObject:
   - component: {fileID: 405340973}
   m_Layer: 0
   m_Name: Enemies
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11059,6 +11059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 8290863156417658891, guid: 5007842b9ffb3e048915571b2c406c7f, type: 3}
   projectilePos: {fileID: 335346289}
+  WeaponIsHeavy: 0
 --- !u!1001 &4827691813263049145
 PrefabInstance:
   m_ObjectHideFlags: 0

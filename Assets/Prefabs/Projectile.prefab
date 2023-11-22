@@ -125,3 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74747fd713d58e4b9034ae318e47da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemies: []
+  shotRange: 2
+  shotSpeed: 3
