@@ -27,6 +27,9 @@ public class RangedCombat : MonoBehaviour
     private int lightShotCoolDownMax;
     private int heavyShotCoolDownMax;
     private bool CanShoot;
+    private int shotSpeed;
+    private int lightSpeed = 3;
+    private int heavySpeed = 7;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +51,7 @@ public class RangedCombat : MonoBehaviour
             {
                 PassTarget();
                 PassDamage();
+                PassShotSpeed();
                 if(WeaponIsHeavy != true)
                 {
                     LightRangedAttack();
@@ -185,5 +189,18 @@ public class RangedCombat : MonoBehaviour
     public void SetWeaponLight()
     {
         WeaponIsHeavy = false;
+    }
+    void PassShotSpeed()
+    {
+        if(WeaponIsHeavy == true)
+        {
+            shotSpeed = heavySpeed;
+            projectile.GetComponent<Projectile>().shotSpeed = shotSpeed;
+        }
+        if(WeaponIsHeavy == false)
+        {
+            shotSpeed = lightSpeed;
+            projectile.GetComponent<Projectile>().shotSpeed = shotSpeed;
+        }
     }
 }

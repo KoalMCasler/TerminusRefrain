@@ -94,12 +94,20 @@ public class TheSong : MonoBehaviour
                     other.gameObject.SetActive(false);
                 }
             }
+            else
+            {
+                return;
+            }
         }
         private void OnTriggerExit2D(Collider2D other)
         {
             if(other.tag == "RecordPlayer")
             {
                 ResetReady = false;
+            }
+            else
+            {
+                return;
             }
         }
         private void SongTimeHUD()

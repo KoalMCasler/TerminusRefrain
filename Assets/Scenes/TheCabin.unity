@@ -11107,6 +11107,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2084566686002282071, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: heavyDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084566686002282071, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: heavyAmmoMax
       value: 6
       objectReference: {fileID: 0}
@@ -11160,7 +11164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5098774413284023344, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5417683786190512346, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
