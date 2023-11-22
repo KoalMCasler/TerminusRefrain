@@ -47,6 +47,10 @@ public class TheSong : MonoBehaviour
     {
         SongObject.gameObject.transform.localScale = new Vector3(SongRadius,SongRadius,SongRadius);
         SongTimeHUD();
+        if(Input.GetButtonDown("PlaySong") && SongTime > 0)
+        {
+            toggleSong();
+        }
         // Makes sure the song is only playing when told to.
         if(SongIsPlaying == false)
         {
@@ -64,15 +68,6 @@ public class TheSong : MonoBehaviour
             {
                 SongIsPlaying = false;
             }
-        }
-        // Song input
-        if(Input.GetButtonDown("PlaySong") && SongTime > 0)
-        {
-            SongIsPlaying = true;
-        }
-        if(Input.GetButton("StopSong"))
-        {
-            SongIsPlaying = false;
         }
         if(Input.GetButtonDown("Interact") && ResetReady == true)
         {
@@ -115,5 +110,16 @@ public class TheSong : MonoBehaviour
             TimeSpan SongTimeSpan = TimeSpan.FromSeconds(SongTime);
             SongHUDText = string.Format("Song Time: {0:D2}:{1:D2}", SongTimeSpan.Minutes, SongTimeSpan.Seconds);
             SongTimeText.text = SongHUDText;
+        }
+        void toggleSong()
+        {
+            if(SongIsPlaying == false)
+            {
+                SongIsPlaying = true;
+            }
+            else
+            {
+                SongIsPlaying = false;
+            }
         }
 }

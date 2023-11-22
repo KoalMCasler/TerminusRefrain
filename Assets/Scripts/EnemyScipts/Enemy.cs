@@ -33,13 +33,8 @@ public class Enemy : MonoBehaviour
     // Causes death state. 
     void Die()
     {
-        Debug.Log("You Warded off your Shadow!");
-        // Death Animation
-
         // Disable Enemy
-        this.enabled = false;
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(gameObject);
     }
     private IEnumerator OnHitAnimation()
     {

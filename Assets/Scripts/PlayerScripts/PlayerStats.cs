@@ -96,4 +96,8 @@ public class PlayerStats : MainCharacter
             col.gameObject.SetActive(false);
         }
     }
+    public void TakeDamage(int damage)
+    {
+        health -=damage;
+    }
 }

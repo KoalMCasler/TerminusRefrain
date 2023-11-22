@@ -375,9 +375,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+    m_PressedColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+    m_SelectedColor: {r: 0.67058825, g: 0.67058825, b: 0.67058825, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -396,7 +396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 352518673266389767}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2084566686002282071}
+        m_TargetAssemblyTypeName: RangedCombat, Assembly-CSharp
+        m_MethodName: SetWeaponLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1563512770053904849
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,9 +539,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+    m_PressedColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
+    m_SelectedColor: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -548,7 +560,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3239468290600448866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2084566686002282071}
+        m_TargetAssemblyTypeName: RangedCombat, Assembly-CSharp
+        m_MethodName: SetWeaponHeavy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2199446079230245689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,7 +1821,7 @@ MonoBehaviour:
   maxFallSpeed: -15
   fallSpeed: 3
   gravityMultipler: 3
-  inputDelay: 0.02
+  inputDelay: 0.01
   passingThroughPlatform: 0
   jumpDelay: 0.3
   jumpTime: 0.3
@@ -1934,9 +1958,9 @@ MonoBehaviour:
   Enemies: []
   projectilePos: {fileID: 1563512770053904848}
   lightDamage: 1
-  heavyDamage: 10
+  heavyDamage: 5
   WeaponIsHeavy: 0
-  attackRange: 4
+  attackRange: 3
   lightAmmo: 2
   heavyAmmo: 0
   lightAmmoMax: 20
