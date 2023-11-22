@@ -9,10 +9,12 @@ public class Enemy : MonoBehaviour
     public int MaxHP = 10;
     // Current HP
     private int CurrentHP; 
+    public int damage;
     // Start is called before the first frame update
     // Sets Current Hp to Max HP on load. 
     void Start()
     {
+        damage = 10;
         enemyAnimator.SetBool("IsHit", false);
         CurrentHP = MaxHP;
     }

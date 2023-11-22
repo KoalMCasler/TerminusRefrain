@@ -21,7 +21,6 @@ public class PlayerStats : MainCharacter
     public int knockBack;
     public int deathTime;
     public GameObject winText;
-    public int enemyDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +28,6 @@ public class PlayerStats : MainCharacter
         deathText.SetActive(false);
         health = 100;
         deathTime = 3;
-        enemyDamage = 20;
         winText.SetActive(false);
     }
 
@@ -84,9 +82,9 @@ public class PlayerStats : MainCharacter
     {
         if(col.CompareTag("Enemy"))
         {
-            health -= enemyDamage;
+            TakeDamage(col.GetComponent<Enemy>().damage);
             //col.gameObject.SetActive(false); Debug Function.
-            Debug.Log(string.Format("you took {0} damage", enemyDamage));
+            Debug.Log(string.Format("you took {0} damage", col.GetComponent<Enemy>().damage));
             Debug.Log(string.Format("you touched {0}", col.name));
         }
         if(col.CompareTag("Scrap"))
