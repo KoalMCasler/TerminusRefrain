@@ -4,40 +4,57 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class RangedCombat : MonoBehaviour
 {
+    public TextMeshProUGUI AmmoText;
     public GameObject player;
     public GameObject projectile;
     public GameObject target;
     public GameObject[] Enemies;
     public Transform projectilePos;
-    private int lightTime;
-    private int heavyTime;
+    public int lightDamage;
+    public int heavyDamage;
     public bool WeaponIsHeavy;
     public int attackRange;
+    public int lightAmmo;
+    public int heavyAmmo;
+    public int lightAmmoMax;
+    public int heavyAmmoMax;
+    private float lightShotCoolDown;
+    private float heavyShotCoolDown;
+    private int lightShotCoolDownMax;
+    private int heavyShotCoolDownMax;
+    private bool CanShoot;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player"); 
+        player = GameObject.FindWithTag("Player");
+        lightAmmo = lightAmmoMax;
+        heavyAmmo = heavyAmmoMax;
+        ResetCoolDown();
     }
     // Update is called once per frame
     void Update()
     {
+        ShotCoolDown();
+        SetHudText();
         if(Input.GetButtonDown("RangedAttack"))
         {
             Enemies = GameObject.FindGameObjectsWithTag("Enemy");
             GetTarget();
-            if(target != null && Vector3.Distance(player.transform.position, target.transform.position) < attackRange)
+            if(target != null && Vector3.Distance(player.transform.position, target.transform.position) < attackRange && CanShoot == true)
             {
                 PassTarget();
+                PassDamage();
                 if(WeaponIsHeavy != true)
                 {
-                    StartCoroutine(LightRangedAttack());
+                    LightRangedAttack();
                 }
                 if(WeaponIsHeavy == true)
                 {
-                    StartCoroutine(HeavyRangedAttack());
+                    HeavyRangedAttack();
                 }
             }
             else
@@ -52,18 +69,34 @@ public class RangedCombat : MonoBehaviour
     }
     void Shoot()
     {
-
         Instantiate(projectile, projectilePos.position, Quaternion.identity);
     }
-    private IEnumerator LightRangedAttack()
+    void LightRangedAttack()
     {
-        yield return new WaitForSeconds(lightTime);
-        Shoot();
+        if(lightAmmo > 0)
+        {
+            lightAmmo -= 1;
+            Shoot();
+            ResetCoolDown();
+        }
+        else
+        {
+            Debug.Log("Out of ammo!");
+        }
+        ResetCoolDown();
     }
-    private IEnumerator HeavyRangedAttack()
+    void HeavyRangedAttack()
     {
-        yield return new WaitForSeconds(heavyTime);
-        Shoot();
+        if(heavyAmmo > 0)
+        {
+            heavyAmmo -= 1;
+            Shoot();
+            ResetCoolDown();
+        }
+        else
+        {
+            Debug.Log("Out of ammo!");
+        }
     }
     void GetTarget()
     {
@@ -86,5 +119,71 @@ public class RangedCombat : MonoBehaviour
         {
             Debug.Log("No Valid Targets");
         }
+    }
+    void SetHudText()
+    {
+        if(WeaponIsHeavy == true)
+        {
+            AmmoText.text = string.Format("Ammo: {0}/{1}", heavyAmmo, heavyAmmoMax);
+        }
+        else
+        {
+            AmmoText.text = string.Format("Ammo: {0}/{1}", lightAmmo, lightAmmoMax);
+        }        
+    }
+    void PassDamage()
+    {
+        if(WeaponIsHeavy == true)
+        {
+            projectile.GetComponent<Projectile>().damage = heavyDamage;
+        }
+        if(WeaponIsHeavy == false)
+        {
+            projectile.GetComponent<Projectile>().damage = lightDamage;
+        }
+    }
+    void ShotCoolDown()
+    {
+        if(WeaponIsHeavy == true)
+        {
+            heavyShotCoolDown -= Time.deltaTime;
+            if(heavyShotCoolDown <= 0)
+            {
+                heavyShotCoolDown = 0;
+                CanShoot = true;
+            }
+            else
+            {CanShoot = false;}
+        }
+        if(WeaponIsHeavy == false)
+        {
+            lightShotCoolDown -= Time.deltaTime;
+            if(lightShotCoolDown <= 0)
+            {
+                lightShotCoolDown = 0;
+                CanShoot = true;
+            }
+            else
+            {CanShoot = false;}
+        }
+    }
+    void ResetCoolDown()
+    {
+        if(WeaponIsHeavy == true)
+        {
+            heavyShotCoolDown = heavyShotCoolDownMax;
+        }
+        if(WeaponIsHeavy == false)
+        {
+           lightShotCoolDown = lightShotCoolDownMax;
+        }
+    }
+    public void SetWeaponHeavy()
+    {
+        WeaponIsHeavy = true;
+    }
+    public void SetWeaponLight()
+    {
+        WeaponIsHeavy = false;
     }
 }

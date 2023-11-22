@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     private GameObject player;
     public float shotSpeed;
     public float shotLifeSpan;
+    public int damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,14 @@ public class Projectile : MonoBehaviour
         shotLifeSpan -= Time.deltaTime;
         if(shotLifeSpan <= 0)
         {
+            Destroy(gameObject);
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            other.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

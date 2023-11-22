@@ -31,7 +31,7 @@ public class PlayerCombat : MonoBehaviour
                 StartCoroutine(HeavyMeleeAttack());
             }
         }
-        DebugControl();
+        //DebugControl();
     }
 
     // Melee attack logic

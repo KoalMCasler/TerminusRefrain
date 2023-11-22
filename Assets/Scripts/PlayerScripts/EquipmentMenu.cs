@@ -31,6 +31,8 @@ public class EquipmentMenu : MonoBehaviour
     }
     void OpenMenu()
     {
+        gameObject.GetComponent<RangedCombat>().lightAmmo = gameObject.GetComponent<RangedCombat>().lightAmmoMax;
+        gameObject.GetComponent<RangedCombat>().heavyAmmo = gameObject.GetComponent<RangedCombat>().heavyAmmoMax;
         MenuIsUsed = true;
         EquipMenu.SetActive(true);
         PauseMenu.SetActive(false);
