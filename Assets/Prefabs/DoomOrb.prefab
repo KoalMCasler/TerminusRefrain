@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6511206564798736273}
   - component: {fileID: 1884793317434056594}
   - component: {fileID: 8742787406282229703}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoomOrb
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -158,6 +158,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAnimator: {fileID: 6511206564798736273}
   MaxHP: 2
+  damage: 0
+  enemyKnockBack: {x: 0, y: 0}
+  knockBackForce: 3
 --- !u!114 &8742787406282229703
 MonoBehaviour:
   m_ObjectHideFlags: 0

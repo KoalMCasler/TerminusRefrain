@@ -18,7 +18,7 @@ public class PlayerStats : MainCharacter
     public TextMeshProUGUI healthText;
     public int sceneBuildIndex;
     public GameObject deathText;
-    public int knockBack;
+    public int knockBackForce;
     public int deathTime;
     public GameObject winText;
     // Start is called before the first frame update

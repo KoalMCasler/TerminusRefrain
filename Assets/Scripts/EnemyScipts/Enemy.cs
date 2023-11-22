@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -10,10 +11,14 @@ public class Enemy : MonoBehaviour
     // Current HP
     private int CurrentHP; 
     public int damage;
+    public Vector2 enemyKnockBack;
+    public int knockBackForce;
+    private Rigidbody2D enemyRB;
     // Start is called before the first frame update
     // Sets Current Hp to Max HP on load. 
     void Start()
     {
+        enemyKnockBack = new Vector2(knockBackForce,0);
         damage = 10;
         enemyAnimator.SetBool("IsHit", false);
         CurrentHP = MaxHP;
@@ -25,7 +30,6 @@ public class Enemy : MonoBehaviour
         //Play OnHit animation
         StartCoroutine(OnHitAnimation());
         CurrentHP -= Damage;
-
         if (CurrentHP <= 0)
         {
             Die();

@@ -12,6 +12,7 @@ public class RangedEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         shotTime = 2;
         player= GameObject.FindWithTag("Player");
     }

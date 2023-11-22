@@ -15,7 +15,6 @@ public class PlayerCombat : MonoBehaviour
     public float HeavyWaitTime = 1f;
     public int HeavyDamage = 2;
     public bool WeaponIsHeavy;
-  
     // Input check
     private void Update()
     {

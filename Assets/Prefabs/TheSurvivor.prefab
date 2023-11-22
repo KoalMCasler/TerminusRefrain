@@ -1918,10 +1918,9 @@ MonoBehaviour:
   healthText: {fileID: 497925442725393897}
   sceneBuildIndex: 0
   deathText: {fileID: 9213354080777904129}
-  knockBack: 0
+  knockBackForce: 3
   deathTime: 3
   winText: {fileID: 6740302500352366852}
-  enemyDamage: 20
 --- !u!114 &4912269425429601631
 MonoBehaviour:
   m_ObjectHideFlags: 0
