@@ -1972,10 +1972,6 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 631263015}
-    - target: {fileID: 3332044769331244179, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.58

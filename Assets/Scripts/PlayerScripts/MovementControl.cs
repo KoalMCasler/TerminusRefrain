@@ -75,12 +75,12 @@ public class MovementControl : MainCharacter
         //Checks if the player is grounded
         GroundCheck();
         //Turns collisions back on for one way platforms
+        StartCoroutine(IsJumping());
     }
     void FixedUpdate()
     {
         Movement();
         SpeedModifier();
-        StartCoroutine(IsJumping());
     }
     void Movement()
     {
