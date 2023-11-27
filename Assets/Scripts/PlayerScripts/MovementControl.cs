@@ -207,6 +207,7 @@ public class MovementControl : MainCharacter
         if(mainCharacter.isJumping)
         {
             inputEnabled = false;
+            playerAnim.SetBool("Jumping", true);
             yield return new WaitForSeconds(jumpDelay);
             inputEnabled = true;
             //Applies initial jump force
@@ -214,6 +215,7 @@ public class MovementControl : MainCharacter
             //Checks for additional air if holding down jump button
             AdditionalAir();
             yield return new WaitForSeconds(jumpTime);
+            playerAnim.SetBool("Jumping", false);
             mainCharacter.isJumping = false;
             isFalling = true;
         }
