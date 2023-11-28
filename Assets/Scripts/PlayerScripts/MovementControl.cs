@@ -201,6 +201,8 @@ public class MovementControl : MainCharacter
             }
         }
     }
+    //Addeing a comment 
+    
     private IEnumerator IsJumping()
     {
         //Checks if character is in jump state
