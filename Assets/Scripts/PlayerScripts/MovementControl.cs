@@ -206,10 +206,7 @@ public class MovementControl : MainCharacter
         //Checks if character is in jump state
         if(mainCharacter.isJumping)
         {
-            inputEnabled = false;
             playerAnim.SetBool("Jumping", true);
-            yield return new WaitForSeconds(jumpDelay);
-            inputEnabled = true;
             //Applies initial jump force
             playerRB.AddForce(Vector2.up * jumpForce);
             //Checks for additional air if holding down jump button

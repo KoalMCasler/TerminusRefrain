@@ -7232,6 +7232,10 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 1519725376}
+    - target: {fileID: 658754849142777998, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: jumpForce
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7400002
