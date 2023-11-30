@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &4690828693670345099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017583609, y: -0.46402973}
+  m_Offset: {x: -0.037156224, y: -0.46402973}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5612302, y: 0.92391217}
+  m_Size: {x: 0.124608755, y: 0.92391217}
   m_EdgeRadius: 0
 --- !u!114 &2808313131406749872
 MonoBehaviour:
@@ -168,13 +168,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4415243016348170440}
     m_Modifications:
+    - target: {fileID: 2496259771862307779, guid: 217f353c52a2d034580ef57282322268, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4052957327333751733, guid: 217f353c52a2d034580ef57282322268, type: 3}
       propertyPath: m_Name
       value: FPromt
       objectReference: {fileID: 0}
     - target: {fileID: 4052957327333751733, guid: 217f353c52a2d034580ef57282322268, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052957327333751733, guid: 217f353c52a2d034580ef57282322268, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156938158672589830, guid: 217f353c52a2d034580ef57282322268, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761578825179393468, guid: 217f353c52a2d034580ef57282322268, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369174596570843374, guid: 217f353c52a2d034580ef57282322268, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537032383081956171, guid: 217f353c52a2d034580ef57282322268, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9149130701747786777, guid: 217f353c52a2d034580ef57282322268, type: 3}
       propertyPath: m_LocalScale.x

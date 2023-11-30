@@ -16,10 +16,10 @@ public class RangedCombat : MonoBehaviour
     public Transform projectilePos;
     public int lightDamage;
     public int heavyDamage;
-    public bool WeaponIsHeavy;
+    static public bool WeaponIsHeavy;
     public int attackRange;
-    public int lightAmmo;
-    public int heavyAmmo;
+    static public int lightAmmo;
+    static public int heavyAmmo;
     public int lightAmmoMax;
     public int heavyAmmoMax;
     private float lightShotCoolDown;
@@ -202,5 +202,20 @@ public class RangedCombat : MonoBehaviour
             shotSpeed = lightSpeed;
             projectile.GetComponent<Projectile>().shotSpeed = shotSpeed;
         }
+    }
+    public void Reload()
+    {
+        if(WeaponIsHeavy == true)
+        {
+            heavyAmmo = heavyAmmoMax;
+        }
+        if(WeaponIsHeavy != true)
+        {
+            lightAmmo = lightAmmoMax;
+        }
+    }
+        public void PassHeavyStatus()
+    {
+        gameObject.GetComponent<EquipmentMenu>().RangedIsHeavy = WeaponIsHeavy;
     }
 }

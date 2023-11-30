@@ -12,6 +12,10 @@ public class EquipmentMenu : MonoBehaviour
     [SerializeField]
     private bool MenuIsUsed;
     public bool MenuCanBeUsed;
+    public TextMeshProUGUI CurrentRanged;
+    public TextMeshProUGUI CurrentMelee;
+    public bool RangedIsHeavy;
+    public bool MeleeIsHeavy;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,8 @@ public class EquipmentMenu : MonoBehaviour
     }
     void Update()
     {
+        gameObject.GetComponent<PlayerCombat>().PassHeavyStatus();
+        gameObject.GetComponent<RangedCombat>().PassHeavyStatus();
         if(Input.GetButtonDown("Interact") && MenuCanBeUsed == true)
         {
             OpenMenu();
@@ -28,11 +34,26 @@ public class EquipmentMenu : MonoBehaviour
         {
             CloseMenu();
         }
+        if(MeleeIsHeavy == true)
+        {
+            CurrentMelee.text = "Equip = Heavy";
+        }
+        else
+        {
+            CurrentMelee.text = "Equip = Light";
+        }
+        if(RangedIsHeavy == true)
+        {
+            CurrentRanged.text = "Equip = Heavy";
+        }
+        else
+        {
+            CurrentRanged.text = "Equip = Light";
+        }
     }
     void OpenMenu()
     {
-        gameObject.GetComponent<RangedCombat>().lightAmmo = gameObject.GetComponent<RangedCombat>().lightAmmoMax;
-        gameObject.GetComponent<RangedCombat>().heavyAmmo = gameObject.GetComponent<RangedCombat>().heavyAmmoMax;
+        gameObject.GetComponent<RangedCombat>().Reload();
         MenuIsUsed = true;
         EquipMenu.SetActive(true);
         PauseMenu.SetActive(false);

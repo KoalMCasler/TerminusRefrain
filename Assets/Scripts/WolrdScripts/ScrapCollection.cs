@@ -14,7 +14,7 @@ public class ScrapCollection : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            player.GetComponent<PlayerStats>().scrap += 1;
+            player.GetComponent<PlayerStats>().AddScrap();
             gameObject.SetActive(false);
         }
     }

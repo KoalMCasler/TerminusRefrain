@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEditor;
 
 public class TheSong : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class TheSong : MonoBehaviour
     public GameObject SongObject;
     public float SongRadius;
     public int SongPowerLevel;
-    public float SongTime;
+    static public float SongTime;
     public bool SongIsPlaying;
     public float SongBaseTime;
     public bool ResetReady;
@@ -21,9 +22,9 @@ public class TheSong : MonoBehaviour
 
     void Start()
     {
-        SongTimeHUD();
+        //SongTimeHUD();
         Initialization();
-        SetSongTime();
+        //SetSongTime();
     }
     // Sets the power bools for character power level.
 

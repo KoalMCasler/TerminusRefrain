@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class PlayerStats : MainCharacter
 {
-    public int health;
-    public int scrap;
-    public int food;
+    static public int health;
+    static private bool NotFirstLoad;
+    public bool CanHeal;
+    private int maxHealth;
+    static public int scrap;
+    static public int food;
     private string foodString;
     private string scrapString;
     public TextMeshProUGUI FoodHUDObject;
@@ -24,11 +28,17 @@ public class PlayerStats : MainCharacter
     // Start is called before the first frame update
     void Start()
     {
+        CanHeal = false;
         Initialization();
         deathText.SetActive(false);
-        health = 100;
+        maxHealth = 100;
         deathTime = 3;
         winText.SetActive(false);
+        if(NotFirstLoad == false)
+        {
+            Heal();
+            NotFirstLoad = true;
+        }
     }
 
     // Update is called once per frame
@@ -55,6 +65,15 @@ public class PlayerStats : MainCharacter
         if (scrap >= 6)
         {
             Win();
+        }
+        if(Input.GetButtonDown("Interact"))
+        {
+            if(CanHeal == true)
+            {
+                Heal();
+            }
+            else
+            {return;}
         }
     }
     void OnCollisionEnter2D(Collision2D other)
@@ -97,5 +116,17 @@ public class PlayerStats : MainCharacter
     public void TakeDamage(int damage)
     {
         health -=damage;
+    }
+    public void AddScrap()
+    {
+        scrap += 1;
+    }
+    public void AddFood()
+    {
+        food += 1;
+    }
+    public void Heal()
+    {
+        health = maxHealth;
     }
 }

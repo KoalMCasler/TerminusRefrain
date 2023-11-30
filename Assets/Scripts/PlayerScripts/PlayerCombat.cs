@@ -8,13 +8,12 @@ public class PlayerCombat : MonoBehaviour
     public Animator animator;
     public Transform AttackPoint;
     public LayerMask EnemyLayers;
-
-    public float AttackRange = 0.05f;
+    public float AttackRange;
     public int LightDamage = 1;
-    public float LightWaitTime = 0.5f;
-    public float HeavyWaitTime = 1f;
+    public float LightWaitTime = 0.05f;
+    public float HeavyWaitTime = 0.1f;
     public int HeavyDamage = 2;
-    public bool WeaponIsHeavy;
+    static public bool WeaponIsHeavy;
     // Input check
     private void Update()
     {
@@ -30,7 +29,14 @@ public class PlayerCombat : MonoBehaviour
                 StartCoroutine(HeavyMeleeAttack());
             }
         }
-        //DebugControl();
+        if(WeaponIsHeavy == true)
+        {
+            AttackRange = 0.2f;
+        }
+        else
+        {
+            AttackRange = 0.1f;
+        }
     }
 
     // Melee attack logic
@@ -107,6 +113,10 @@ public class PlayerCombat : MonoBehaviour
         }
         else
         {return;}
+    }
+    public void PassHeavyStatus()
+    {
+        gameObject.GetComponent<EquipmentMenu>().MeleeIsHeavy = WeaponIsHeavy;
     }
 
 }

@@ -18,6 +18,7 @@ TagManager:
   - Enter
   - HUD
   - Wardrobe
+  - Bed
   layers:
   - Default
   - TransparentFX
