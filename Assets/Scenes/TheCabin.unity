@@ -7324,6 +7324,10 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 1519725376}
+    - target: {fileID: 620313669, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: TransitionTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 658754849142777998, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: jumpForce
       value: 15

@@ -9,7 +9,7 @@ public class PlayerTeleport : MonoBehaviour
     // Attachment for transition effect
     public Animator transition;
     // Adjustable delay for transition effect
-    public float TransitionTime = 0.5f;
+    public float TransitionTime = 0.3f;
     
     // Input check
     void Update()
