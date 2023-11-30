@@ -1972,6 +1972,30 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 631263015}
+    - target: {fileID: 1719407863014851713, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: m_text
+      value: Ranged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768355357182299237, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -490.8088
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768355357182299237, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -84.8057
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768355357182299237, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 226
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768355357182299237, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6.8828125
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825861212507156510, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: m_Name
+      value: MeleeText
+      objectReference: {fileID: 0}
     - target: {fileID: 3768027163040638090, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.58
@@ -2016,9 +2040,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: TheSurvivor
       objectReference: {fileID: 0}
+    - target: {fileID: 5098774413284023344, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6438967990603368105, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043754121790363345, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: m_Name
+      value: RangedText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273858839505547567, guid: 4efb10af33bd639449c5752ff1679d09, type: 3}
+      propertyPath: m_text
+      value: 'Melee
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
