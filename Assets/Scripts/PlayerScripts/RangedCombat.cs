@@ -34,8 +34,6 @@ public class RangedCombat : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        lightAmmo = lightAmmoMax;
-        heavyAmmo = heavyAmmoMax;
         ResetCoolDown();
     }
     // Update is called once per frame
@@ -185,10 +183,12 @@ public class RangedCombat : MonoBehaviour
     public void SetWeaponHeavy()
     {
         WeaponIsHeavy = true;
+        Reload();
     }
     public void SetWeaponLight()
     {
         WeaponIsHeavy = false;
+        Reload();
     }
     void PassShotSpeed()
     {
