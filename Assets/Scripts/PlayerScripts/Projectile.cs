@@ -45,5 +45,9 @@ public class Projectile : MonoBehaviour
             other.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        if(other.CompareTag("Power1"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
