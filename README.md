@@ -11,4 +11,4 @@ A 2D lovcraftian step platformer WIP.
 The Menu.
 <img width="960" alt="MenuScreenShot" src="https://github.com/KoalMCasler/TerminusRefrain/assets/71401318/3a3d2dc0-3154-476e-8761-bc994bea44d0">
 
-Copyright 2023, Shrouded Fortress Entertainment. 
+Copyright 2023-24, Shrouded Fortress Entertainment. 
