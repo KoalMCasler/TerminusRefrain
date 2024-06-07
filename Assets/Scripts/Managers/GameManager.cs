@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
         uIManager = FindObjectOfType<UIManager>();
         
         inventoryManager = FindObjectOfType<InventoryManager>();
+
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
@@ -40,12 +42,18 @@ public class GameManager : MonoBehaviour
 
     void MainMenu()
     {
-
+        if(player.activeSelf)
+        {
+            player.SetActive(false);
+        }
     }
 
     void Gameplay()
     {
-
+        if(player.activeSelf == false)
+        {
+            player.SetActive(true);
+        }
     }
 
     void Paused()

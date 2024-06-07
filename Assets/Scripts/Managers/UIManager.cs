@@ -1,17 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Object Referances")]
+    public GameManager gameManager;
+    public GameObject player;
+    [Header("UI Referances")]
+    public GameObject MenuObject;
+    public GameObject OptionsObject;
+    public GameObject PauseObject;
+    public GameObject HUDObject;
+
     void Start()
+    {
+        player = gameManager.player;
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MainMenu()
     {
         
     }

@@ -114,10 +114,5 @@ public class PlayerCombat : MonoBehaviour
         else
         {return;}
     }
-    public void PassHeavyStatus()
-    {
-        gameObject.GetComponent<EquipmentMenu>().MeleeIsHeavy = WeaponIsHeavy;
-    }
-
 }
 

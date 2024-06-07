@@ -214,8 +214,4 @@ public class RangedCombat : MonoBehaviour
             lightAmmo = lightAmmoMax;
         }
     }
-        public void PassHeavyStatus()
-    {
-        gameObject.GetComponent<EquipmentMenu>().RangedIsHeavy = WeaponIsHeavy;
-    }
 }
