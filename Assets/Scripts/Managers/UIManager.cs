@@ -24,8 +24,32 @@ public class UIManager : MonoBehaviour
         
     }
 
+    void ResetUI()
+    {
+        MenuObject.SetActive(false);
+        OptionsObject.SetActive(false);
+        PauseObject.SetActive(false);
+        HUDObject.SetActive(false);
+    }
+
     public void MainMenu()
     {
-        
+        ResetUI();
+        MenuObject.SetActive(true);
+    }
+    public void Gameplay()
+    {
+        ResetUI();
+        HUDObject.SetActive(true);
+    }
+    public void Pause()
+    {
+        ResetUI();
+        PauseObject.SetActive(true);
+    }
+    public void Options()
+    {
+        ResetUI();
+        OptionsObject.SetActive(true);
     }
 }

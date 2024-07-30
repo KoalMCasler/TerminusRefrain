@@ -28,10 +28,12 @@ public class LevelManager : MonoBehaviour
         if(sceneName.StartsWith("Game"))
         {
             gameManager.gameState = GameManager.GameState.Gameplay;
+            gameManager.ChangeGameState();
         }
         if(sceneName == "MainMenu")
         {
             gameManager.gameState = GameManager.GameState.MainMenu;
+            gameManager.ChangeGameState();
         }
         StartCoroutine(LoadSceneWithDealy(sceneName));
     }

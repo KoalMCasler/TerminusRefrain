@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("Game State")]
     public GameState gameState;
 
-    public void Awake()
+    public void Start()
     {
         gameState = GameState.MainMenu;
 
@@ -25,9 +25,11 @@ public class GameManager : MonoBehaviour
         inventoryManager = FindObjectOfType<InventoryManager>();
 
         player = GameObject.FindWithTag("Player");
+        
+        ChangeGameState();
     }
 
-    void Update()
+    public void ChangeGameState()
     {
         switch(gameState)
         {
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
         {
             player.SetActive(false);
         }
+        uIManager.MainMenu();
     }
 
     void Gameplay()
@@ -54,16 +57,17 @@ public class GameManager : MonoBehaviour
         {
             player.SetActive(true);
         }
+        uIManager.Gameplay();
     }
 
     void Paused()
     {
-
+        uIManager.Pause();
     }
 
     void Options()
     {
-
+        uIManager.Options();
     }
 
     void GameOver()
