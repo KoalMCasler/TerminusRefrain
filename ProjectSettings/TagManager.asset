@@ -23,6 +23,7 @@ TagManager:
   - EnterOffset
   - ExitOffset
   - CrossFade
+  - Terrain
   layers:
   - Default
   - TransparentFX

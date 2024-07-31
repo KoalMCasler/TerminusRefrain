@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9038756627528178557}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: EnterOffset
   m_TagString: EnterOffset
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -41,7 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 472025735643269438}
   - component: {fileID: 5441582524920240805}
-  m_Layer: 3
+  - component: {fileID: 3789924332254603204}
+  m_Layer: 0
   m_Name: LevelEnterance
   m_TagString: Enter
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -109,3 +110,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.9404743}
   m_EdgeRadius: 0
+--- !u!114 &3789924332254603204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546858779475106575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e11184341acf52439875f9734fbaa0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 0}
+  targetScene: 

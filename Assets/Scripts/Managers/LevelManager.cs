@@ -39,6 +39,10 @@ public class LevelManager : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if(player.activeSelf)
+        {
+            player.SetActive(false);
+        }
         Entrance = GameObject.FindWithTag("Enter");
         Exit = GameObject.FindWithTag("Exit");
         EnterOffset = GameObject.FindWithTag("EnterOffset");
@@ -49,9 +53,10 @@ public class LevelManager : MonoBehaviour
         GameObject target = sceneInfo.IsNextScene ? Entrance : Exit;
         Vector3 Offset = sceneInfo.IsNextScene ? EnterOffset.transform.position : ExitOffset.transform.position;
         player.transform.position =  Offset;
+        player.SetActive(true);
         SceneManager.sceneLoaded -= OnSceneLoaded;SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-    IEnumerator LoadSceneWithDealy(string sceneName)
+    public IEnumerator LoadSceneWithDealy(string sceneName)
     {
         yield return new WaitForSeconds(SceneChangeDelay);
         SceneManager.LoadScene(sceneName);

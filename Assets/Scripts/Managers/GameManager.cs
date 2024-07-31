@@ -53,10 +53,6 @@ public class GameManager : MonoBehaviour
 
     void Gameplay()
     {
-        if(player.activeSelf == false)
-        {
-            player.SetActive(true);
-        }
         uIManager.Gameplay();
     }
 

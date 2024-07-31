@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 146716022}
   m_Layer: 0
   m_Name: Ground (2)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 497362386}
   m_Layer: 0
   m_Name: Ground (1)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -733,9 +733,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1560089353}
     m_Modifications:
+    - target: {fileID: 585566499255772907, guid: 051afac640a95dc459078c2a1fd11a32, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1208595522743685287, guid: 051afac640a95dc459078c2a1fd11a32, type: 3}
       propertyPath: m_Name
-      value: GrabPoint (1)
+      value: GrabPoint
       objectReference: {fileID: 0}
     - target: {fileID: 2266297680718385226, guid: 051afac640a95dc459078c2a1fd11a32, type: 3}
       propertyPath: m_LocalScale.x
@@ -803,6 +807,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1560089353}
     m_Modifications:
+    - target: {fileID: 585566499255772907, guid: 051afac640a95dc459078c2a1fd11a32, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1208595522743685287, guid: 051afac640a95dc459078c2a1fd11a32, type: 3}
       propertyPath: m_Name
       value: GrabPoint
@@ -1102,6 +1110,10 @@ PrefabInstance:
       propertyPath: sceneBuildIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5441582524920240805, guid: 0a1fa00822ae05642ae41fbae2dfc13e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8546858779475106575, guid: 0a1fa00822ae05642ae41fbae2dfc13e, type: 3}
       propertyPath: m_Name
       value: LevelEnterance
@@ -1151,9 +1163,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1938899280096869112, guid: eb06ecbf26bf21146a92cb9b5d761460, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2583258574519394060, guid: eb06ecbf26bf21146a92cb9b5d761460, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.279
+      value: -21.534
       objectReference: {fileID: 0}
     - target: {fileID: 2583258574519394060, guid: eb06ecbf26bf21146a92cb9b5d761460, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1191,9 +1207,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2583258574519394061, guid: eb06ecbf26bf21146a92cb9b5d761460, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2583258574519394067, guid: eb06ecbf26bf21146a92cb9b5d761460, type: 3}
       propertyPath: m_Name
       value: LevelExit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583258574519394067, guid: eb06ecbf26bf21146a92cb9b5d761460, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760481095212609260, guid: eb06ecbf26bf21146a92cb9b5d761460, type: 3}
+      propertyPath: targetScene
+      value: GameCabin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1458,7 +1486,7 @@ GameObject:
   - component: {fileID: 1560089353}
   m_Layer: 0
   m_Name: GrabPoints
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1471,14 +1499,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560089352}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.066233, y: 2.0730507, z: 0.09307563}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 676431550}
   - {fileID: 649989053}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1857812109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565322333
 GameObject:
@@ -1493,7 +1521,7 @@ GameObject:
   - component: {fileID: 1565322337}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1713,7 +1741,7 @@ GameObject:
   - component: {fileID: 1857812109}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1735,6 +1763,7 @@ Transform:
   - {fileID: 497362385}
   - {fileID: 146716021}
   - {fileID: 1868978827}
+  - {fileID: 1560089353}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1868978826
@@ -1748,10 +1777,9 @@ GameObject:
   - component: {fileID: 1868978827}
   - component: {fileID: 1868978830}
   - component: {fileID: 1868978829}
-  - component: {fileID: 1868978828}
   m_Layer: 0
-  m_Name: Grabable
-  m_TagString: Untagged
+  m_Name: ledge
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1771,20 +1799,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1857812109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1868978828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868978826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45cbc991aa537a84a8781f6164ca5f15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hangingHorizontalOffset: 0
-  hangingVerticalOffset: 0.5
 --- !u!61 &1868978829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1893,6 +1907,5 @@ SceneRoots:
   - {fileID: 1227262530}
   - {fileID: 295697721}
   - {fileID: 1160004414}
-  - {fileID: 1560089353}
   - {fileID: 1391232341}
   - {fileID: 1343860904}
