@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 leftOffset;
     public Vector3 rightOffset;
     public GameObject ledge;
-    public float climbDuration = .5f;
+    public float climbDuration;
     public Vector3 topOfLedge;
     void Start()
     {
@@ -61,11 +61,11 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection.x = moveVector2.x;
         }
-        if(isGrabingLedge)
+        else if(isGrabingLedge)
         {
             if(moveVector2.y > 0)
             {
-                LedgeClimb();
+                StartCoroutine(LedgeClimb());
             }
             if(moveVector2.y < 0)
             {
@@ -94,19 +94,7 @@ public class PlayerController : MonoBehaviour
     {
         if(col.gameObject.name == "GrabPoint" && col.gameObject.transform.position.y > this.gameObject.transform.position.y)
         {
-            ledge = col.gameObject;
-            topOfLedge = ledge.transform.position;
-            topOfLedge.y = ledge.transform.position.y * 1.25f;
-            if(ledge.transform.position.x < this.gameObject.transform.position.x)
-            {
-                activeOffset = leftOffset + ledge.transform.position;
-            }
-            if(ledge.transform.position.x > this.gameObject.transform.position.x)
-            {
-                activeOffset = rightOffset + ledge.transform.position;
-            }
-            isGrabingLedge = true;
-            Debug.Log("Grab point hit");
+            LedgeGrab(col.gameObject);
         }
     }
 
@@ -126,22 +114,39 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void LedgeGrab()
+    void LedgeGrab(GameObject ledge)
     {
+        topOfLedge = ledge.transform.position;
+        topOfLedge.y = ledge.transform.position.y * 1.25f;
+        if(ledge.transform.position.x < this.gameObject.transform.position.x)
+        {
+            activeOffset = leftOffset + ledge.transform.position;
+            //used to make sure player is facing ledge
+            animator.SetFloat("inputX", -1);
+        }
+        if(ledge.transform.position.x > this.gameObject.transform.position.x)
+        {
+            activeOffset = rightOffset + ledge.transform.position;
+            //used to make sure player is facing ledge
+            animator.SetFloat("inputX", 1);
+        }
+        isGrabingLedge = true;
         
     }
-    void LedgeClimb()
+    IEnumerator LedgeClimb()
     {
-        float climbTime = 0;
+        float climbTime = 0f;
         Vector2 startValue = transform.position;
         while (climbTime <= climbDuration)
         {
-            transform.position = Vector2.Lerp(startValue, topOfLedge, climbTime / climbDuration);
             climbTime += Time.deltaTime;  
+            transform.position = Vector2.Lerp(startValue, topOfLedge, climbTime/climbDuration);
+            yield return null;
         }
         isGrabingLedge = false;
         ledge = null;
         topOfLedge = Vector3.zero;
         activeOffset = Vector3.zero;
+        moveDirection = Vector2.zero;
     }
 }

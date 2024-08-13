@@ -10,7 +10,7 @@ public class LevelMoveTrigger : MonoBehaviour
     {
         levelManager = FindObjectOfType<LevelManager>();
     }
-    void OnCollisionEnter2D(Collision2D Other)
+    void OnTriggerEnter2D(Collider2D Other)
     {
         if(Other.gameObject.CompareTag("Player"))
         {

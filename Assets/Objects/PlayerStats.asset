@@ -15,5 +15,5 @@ MonoBehaviour:
   maxHP: 10
   currentHP: 5
   moveSpeed: 100
-  jumpForce: 150
+  jumpForce: 170
   playerDamage: 1

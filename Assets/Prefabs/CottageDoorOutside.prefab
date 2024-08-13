@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4415243016348170440}
   - component: {fileID: 6872419648832517483}
   - component: {fileID: 4690828693670345099}
-  - component: {fileID: 2808313131406749872}
   - component: {fileID: 673651450727869422}
   m_Layer: 3
   m_Name: CottageDoorOutside
@@ -133,19 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.124608755, y: 0.92391217}
   m_EdgeRadius: 0
---- !u!114 &2808313131406749872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5597419201263287310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a45644fd08e9c04196782c42aaf0d5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: {fileID: 0}
 --- !u!114 &673651450727869422
 MonoBehaviour:
   m_ObjectHideFlags: 0
